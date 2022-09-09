@@ -45,6 +45,7 @@
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.arch.core:core-common:2.1.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.collection:collection:1.1.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.constraintlayout:constraintlayout-solver:2.0.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.google.code.gson:gson:2.8.6" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.test.ext:junit:1.1.3@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.test:core:1.4.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.test:monitor:1.4.0@aar" level="project" />
@@ -86,6 +87,15 @@
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.recyclerview:recyclerview:1.1.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.transition:transition:1.2.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.viewpager2:viewpager2:1.0.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: cn.rongcloud.sdk:im_lib:5.2.4@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: cn.rongcloud.sdk:im_libcore:5.2.4@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: cn.rongcloud.sdk:crash:1.0.2@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: cn.rongcloud.sdk:im_chatroom:5.2.4@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: cn.rongcloud.sdk:im_location:5.2.4@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: cn.rongcloud.sdk:im_discussion:5.2.4@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: cn.rongcloud.sdk:im_customservice:5.2.4@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: cn.rongcloud.sdk:im_publicservice:5.2.4@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: cn.rongcloud.sdk:rtc_lib:5.2.4.100@aar" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="RongWeChat.app.main" />
 </module>
