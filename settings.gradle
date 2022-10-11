@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "RongWeChat"
 include ':app'
+include ':imkit'

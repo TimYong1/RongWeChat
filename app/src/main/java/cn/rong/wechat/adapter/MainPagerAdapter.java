@@ -5,9 +5,6 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import java.util.ArrayList;
@@ -16,8 +13,9 @@ import java.util.List;
 public class MainPagerAdapter extends FragmentStateAdapter {
 
    List<Fragment> fragments = new ArrayList<>();
-    public MainPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
+    public MainPagerAdapter(@NonNull FragmentActivity fragmentActivity,List<Fragment> fragmentList) {
         super(fragmentActivity);
+        this.fragments = fragmentList;
 
     }
 

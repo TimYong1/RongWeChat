@@ -7,6 +7,10 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/RongWeChat.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/RongWeChat.app.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/RongWeChat.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/RongWeChat.app.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/RongWeChat.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/RongWeChat.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/imkit/RongWeChat.imkit.iml" filepath="$PROJECT_DIR$/.idea/modules/imkit/RongWeChat.imkit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/imkit/RongWeChat.imkit.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/imkit/RongWeChat.imkit.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/imkit/RongWeChat.imkit.main.iml" filepath="$PROJECT_DIR$/.idea/modules/imkit/RongWeChat.imkit.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/imkit/RongWeChat.imkit.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/imkit/RongWeChat.imkit.unitTest.iml" />
     </modules>
   </component>
 </project>

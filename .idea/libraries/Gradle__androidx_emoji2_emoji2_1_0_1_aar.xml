@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.emoji2:emoji2:1.0.1@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/3bcc5d656e688ada5e3f584edb3b8a52/transformed/emoji2-1.0.1/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/3bcc5d656e688ada5e3f584edb3b8a52/transformed/emoji2-1.0.1/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/3bcc5d656e688ada5e3f584edb3b8a52/transformed/emoji2-1.0.1/jars/libs/repackaged.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3bcc5d656e688ada5e3f584edb3b8a52/transformed/emoji2-1.0.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3bcc5d656e688ada5e3f584edb3b8a52/transformed/emoji2-1.0.1/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.emoji2/emoji2/1.0.1/84437bb39e1d32ddd2cab288beb90177913dcb99/emoji2-1.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

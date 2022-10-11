@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: cn.rongcloud.sdk:im_discussion:5.2.5.2@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/a443946402b30bf28f616bd82e9c7be6/transformed/im_discussion-5.2.5.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/a443946402b30bf28f616bd82e9c7be6/transformed/im_discussion-5.2.5.2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/a443946402b30bf28f616bd82e9c7be6/transformed/im_discussion-5.2.5.2/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

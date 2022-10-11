@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: cn.rongcloud.sdk:im_libcore:5.2.5.2@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/017fe4621f4da751b467b59abdb5c110/transformed/im_libcore-5.2.5.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/017fe4621f4da751b467b59abdb5c110/transformed/im_libcore-5.2.5.2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/017fe4621f4da751b467b59abdb5c110/transformed/im_libcore-5.2.5.2/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
