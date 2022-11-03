@@ -28,19 +28,23 @@ public class TimUtils {
     private static UserInfo userInfo;
     private static loginStatu mLoginStatu;
 
-    public static void getToken(String userId, loginStatu loginStatu) {
+    public static void getToken(String userId, String token ,loginStatu loginStatu) {
         mLoginStatu = loginStatu;
-        TokenServer.getToken(userId, new TokenServer.tokenCallback() {
-            @Override
-            public void success(String token) {
-                conRongServer(token);
-            }
+        if (TextUtils.isEmpty(token)){
+            TokenServer.getToken(userId, new TokenServer.tokenCallback() {
+                @Override
+                public void success(String token) {
+                    conRongServer(token);
+                }
 
-            @Override
-            public void error() {
-                mLoginStatu.loginFail();
-            }
-        });
+                @Override
+                public void error() {
+                    mLoginStatu.loginFail();
+                }
+            });
+        }else {
+            conRongServer(token);
+        }
     }
 
     public static void conRongServer(String token) {

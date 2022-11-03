@@ -36,7 +36,10 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-    implementation 'cn.rongcloud.sdk:rtc_lib:5.2.5' // 音视频通话基础能力库
+    implementation 'cn.rongcloud.sdk:rtc_lib:5.2.5.3' // 音视频通话基础能力库
+    implementation 'cn.rongcloud.sdk:fu_beautifier:5.2.5.3' // 相芯美颜扩展库（可选）
+    implementation 'cn.rongcloud.sdk:tinygame_lib:1.0.2' // 相芯美颜扩展库（可选）
+    implementation 'cn.rongcloud.sdk:player:0.0.0.74' // 相芯美颜扩展库（可选）
     implementation 'com.android.support:multidex:1.0.3'
     implementation("com.squareup.okhttp3:okhttp:4.9.3")
     implementation("com.squareup.okio:okio:2.10.0")

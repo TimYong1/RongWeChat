@@ -93,7 +93,11 @@
     <orderEntry type="library" name="Gradle: cn.rongcloud.sdk:im_discussion:5.2.5.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: cn.rongcloud.sdk:im_customservice:5.2.5.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: cn.rongcloud.sdk:im_publicservice:5.2.5.2@aar" level="project" />
-    <orderEntry type="library" name="Gradle: cn.rongcloud.sdk:rtc_lib:5.2.5@aar" level="project" />
+    <orderEntry type="library" name="Gradle: cn.rongcloud.sdk:rtc_lib:5.2.5.3@aar" level="project" />
+    <orderEntry type="library" name="Gradle: cn.rongcloud.sdk:fu_beautifier:5.2.5.3@aar" level="project" />
+    <orderEntry type="library" name="Gradle: cn.rongcloud.sdk:tinygame_lib:1.0.2@aar" level="project" />
+    <orderEntry type="library" name="Gradle: cn.rongcloud.sdk:rclogger_lib:1.0.4@aar" level="project" />
+    <orderEntry type="library" name="Gradle: cn.rongcloud.sdk:player:0.0.0.74@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:multidex:1.0.3@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.blankj:utilcodex:1.31.0@aar" level="project" />
   </component>

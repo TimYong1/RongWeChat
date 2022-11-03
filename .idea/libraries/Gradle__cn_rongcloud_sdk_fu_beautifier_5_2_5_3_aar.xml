@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: cn.rongcloud.sdk:fu_beautifier:5.2.5.3@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/dbbd15678662484efc3889152378d56a/transformed/fu_beautifier-5.2.5.3/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/dbbd15678662484efc3889152378d56a/transformed/fu_beautifier-5.2.5.3/jars/libs/fu_core_8.3.0.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/dbbd15678662484efc3889152378d56a/transformed/fu_beautifier-5.2.5.3/jars/libs/fu_model_8.3.0.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/dbbd15678662484efc3889152378d56a/transformed/fu_beautifier-5.2.5.3/jars/libs/nama.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/dbbd15678662484efc3889152378d56a/transformed/fu_beautifier-5.2.5.3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/dbbd15678662484efc3889152378d56a/transformed/fu_beautifier-5.2.5.3/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
