@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":RTCLib:androidTest" external.linked.project.path="$MODULE_DIR$/../../../RTCLib" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.type="sourceSet" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="android" name="Android">
+      <configuration>
+        <option name="SELECTED_BUILD_VARIANT" value="debug" />
+        <option name="ASSEMBLE_TASK_NAME" value="assembleDebug" />
+        <option name="COMPILE_JAVA_TASK_NAME" value="compileDebugSources" />
+        <afterSyncTasks>
+          <task>generateDebugSources</task>
+        </afterSyncTasks>
+        <option name="ALLOW_USER_CONFIGURATION" value="false" />
+        <option name="RES_FOLDER_RELATIVE_PATH" value="/src/main/res" />
+        <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/../../../RTCLib/src/main/res;file://$MODULE_DIR$/../../../RTCLib/src/debug/res;file://$MODULE_DIR$/../../../RTCLib/build/generated/res/rs/debug;file://$MODULE_DIR$/../../../RTCLib/build/generated/res/resValues/debug" />
+        <option name="TEST_RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/../../../RTCLib/src/androidTest/res;file://$MODULE_DIR$/../../../RTCLib/src/androidTestDebug/res;file://$MODULE_DIR$/../../../RTCLib/build/generated/res/rs/androidTest/debug;file://$MODULE_DIR$/../../../RTCLib/build/generated/res/resValues/androidTest/debug" />
+        <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/src/main/assets" />
+        <option name="PROJECT_TYPE" value="1" />
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../RTCLib/build/generated/aidl_source_output_dir/debugAndroidTest/out" />
+    <content url="file://$MODULE_DIR$/../../../RTCLib/build/generated/ap_generated_sources/debugAndroidTest/out" />
+    <content url="file://$MODULE_DIR$/../../../RTCLib/build/generated/renderscript_source_output_dir/debugAndroidTest/out" />
+    <content url="file://$MODULE_DIR$/../../../RTCLib/build/generated/res/resValues/androidTest/debug" />
+    <content url="file://$MODULE_DIR$/../../../RTCLib/build/generated/res/rs/androidTest/debug" />
+    <content url="file://$MODULE_DIR$/../../../RTCLib/build/generated/source/buildConfig/androidTest/debug" />
+    <content url="file://$MODULE_DIR$/../../../RTCLib/src/androidTest" />
+    <content url="file://$MODULE_DIR$/../../../RTCLib/src/androidTestDebug" />
+    <orderEntry type="jdk" jdkName="Android API 31 Platform" jdkType="Android SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="testDemo.IMLib.main" scope="TEST" />
+    <orderEntry type="module" module-name="testDemo.RTCLib.main" scope="TEST" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.google.code.gson:gson:2.8.6" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: ./RTCLib/libs/rong_rtclib_5.2.1.50.jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: ./IMLib/libs/rong_imlibcore_5.2.1.50.jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: ./IMLib/libs/rong_imlib_5.2.1.50.jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: ./IMLib/libs/rong_publicservice_5.2.1.50.aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: ./IMLib/libs/rong_customservice_5.2.1.50.aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: ./IMLib/libs/rong_chatroom_5.2.1.50.aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: ./IMLib/libs/rong_discussion_5.2.1.50.aar" level="project" />
+  </component>
+  <component name="TestModuleProperties" production-module="testDemo.RTCLib.main" />
+</module>

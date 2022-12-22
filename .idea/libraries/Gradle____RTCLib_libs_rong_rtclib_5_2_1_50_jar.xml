@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: ./RTCLib/libs/rong_rtclib_5.2.1.50.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/RTCLib/libs/rong_rtclib_5.2.1.50.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -2,15 +2,27 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RongWeChat.iml" filepath="$PROJECT_DIR$/.idea/modules/RongWeChat.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/RongWeChat.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/RongWeChat.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/RongWeChat.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/RongWeChat.app.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/RongWeChat.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/RongWeChat.app.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/RongWeChat.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/RongWeChat.app.unitTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/imkit/RongWeChat.imkit.iml" filepath="$PROJECT_DIR$/.idea/modules/imkit/RongWeChat.imkit.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/imkit/RongWeChat.imkit.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/imkit/RongWeChat.imkit.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/imkit/RongWeChat.imkit.main.iml" filepath="$PROJECT_DIR$/.idea/modules/imkit/RongWeChat.imkit.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/imkit/RongWeChat.imkit.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/imkit/RongWeChat.imkit.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/testDemo.iml" filepath="$PROJECT_DIR$/.idea/modules/testDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CallLib/testDemo.CallLib.iml" filepath="$PROJECT_DIR$/.idea/modules/CallLib/testDemo.CallLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CallLib/testDemo.CallLib.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/CallLib/testDemo.CallLib.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CallLib/testDemo.CallLib.main.iml" filepath="$PROJECT_DIR$/.idea/modules/CallLib/testDemo.CallLib.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CallLib/testDemo.CallLib.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/CallLib/testDemo.CallLib.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/IMLib/testDemo.IMLib.iml" filepath="$PROJECT_DIR$/.idea/modules/IMLib/testDemo.IMLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/IMLib/testDemo.IMLib.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/IMLib/testDemo.IMLib.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/IMLib/testDemo.IMLib.main.iml" filepath="$PROJECT_DIR$/.idea/modules/IMLib/testDemo.IMLib.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/IMLib/testDemo.IMLib.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/IMLib/testDemo.IMLib.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RTCLib/testDemo.RTCLib.iml" filepath="$PROJECT_DIR$/.idea/modules/RTCLib/testDemo.RTCLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RTCLib/testDemo.RTCLib.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/RTCLib/testDemo.RTCLib.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RTCLib/testDemo.RTCLib.main.iml" filepath="$PROJECT_DIR$/.idea/modules/RTCLib/testDemo.RTCLib.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RTCLib/testDemo.RTCLib.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/RTCLib/testDemo.RTCLib.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/testDemo.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/testDemo.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/testDemo.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/testDemo.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/testDemo.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/testDemo.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/testDemo.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/testDemo.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/testmoudle/testDemo.testmoudle.iml" filepath="$PROJECT_DIR$/.idea/modules/testmoudle/testDemo.testmoudle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/testmoudle/testDemo.testmoudle.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/testmoudle/testDemo.testmoudle.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/testmoudle/testDemo.testmoudle.main.iml" filepath="$PROJECT_DIR$/.idea/modules/testmoudle/testDemo.testmoudle.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/testmoudle/testDemo.testmoudle.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/testmoudle/testDemo.testmoudle.unitTest.iml" />
     </modules>
   </component>
 </project>

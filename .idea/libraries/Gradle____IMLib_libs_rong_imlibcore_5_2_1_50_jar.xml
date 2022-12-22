@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: ./IMLib/libs/rong_imlibcore_5.2.1.50.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/IMLib/libs/rong_imlibcore_5.2.1.50.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

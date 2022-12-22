@@ -3,17 +3,31 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2365" />
+        <entry key="app/src/main/res/drawable/moudles_select.xml" value="0.284" />
         <entry key="app/src/main/res/drawable/seal_mine_setting_item_selector.xml" value="0.257" />
         <entry key="app/src/main/res/drawable/seal_switchbtn_check_selector.xml" value="0.257" />
         <entry key="app/src/main/res/layout/R.layout.fragment_contcts.xml" value="0.246875" />
+        <entry key="app/src/main/res/layout/activity_call.xml" value="0.3182291666666667" />
+        <entry key="app/src/main/res/layout/activity_call_ib.xml" value="0.3223958333333333" />
+        <entry key="app/src/main/res/layout/activity_call_lib.xml" value="0.3223958333333333" />
+        <entry key="app/src/main/res/layout/activity_calllib.xml" value="0.3223958333333333" />
         <entry key="app/src/main/res/layout/activity_chat_live.xml" value="0.1828125" />
+        <entry key="app/src/main/res/layout/activity_converstatin.xml" value="0.3421875" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15176151761517614" />
-        <entry key="app/src/main/res/layout/activity_splace.xml" value="0.3223958333333333" />
+        <entry key="app/src/main/res/layout/activity_priview_live.xml" value="0.3421875" />
+        <entry key="app/src/main/res/layout/activity_splace.xml" value="0.26506024096385544" />
+        <entry key="app/src/main/res/layout/fragment_contacts.xml" value="0.21770833333333334" />
         <entry key="app/src/main/res/layout/fragment_find.xml" value="0.1638888888888889" />
         <entry key="app/src/main/res/layout/fragment_messages.xml" value="0.11197916666666667" />
         <entry key="app/src/main/res/layout/fragment_mine.xml" value="0.1638888888888889" />
+        <entry key="app/src/main/res/layout/fragment_test.xml" value="0.277602523659306" />
         <entry key="app/src/main/res/layout/item_setting.xml" value="0.24739583333333334" />
+        <entry key="app/src/main/res/layout/message_list_item.xml" value="0.30833333333333335" />
+        <entry key="app/src/main/res/layout/moudles_item.xml" value="0.3223958333333333" />
         <entry key="app/src/main/res/menu/main_bottom_menu.xml" value="0.10092592592592593" />
+        <entry key="imkit/src/main/res/layout/rc_translate_text_message_item.xml" value="0.309375" />
+        <entry key="testmoudle/src/main/res/layout/activity_splace.xml" value="0.12395833333333334" />
       </map>
     </option>
   </component>

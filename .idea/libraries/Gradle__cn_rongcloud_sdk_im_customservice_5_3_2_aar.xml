@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: cn.rongcloud.sdk:im_customservice:5.3.2@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/7cd8c9d6bbb7b94aec1d7adfde1757be/transformed/im_customservice-5.3.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7cd8c9d6bbb7b94aec1d7adfde1757be/transformed/im_customservice-5.3.2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7cd8c9d6bbb7b94aec1d7adfde1757be/transformed/im_customservice-5.3.2/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

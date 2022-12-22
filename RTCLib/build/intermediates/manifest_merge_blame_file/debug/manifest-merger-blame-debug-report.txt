@@ -1,0 +1,65 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="cn.rongcloud.rtclib" >
+4
+5    <uses-sdk
+6        android:minSdkVersion="19"
+6-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml
+7        android:targetSdkVersion="31" />
+7-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml
+8
+9    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+9-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:4:5-74
+9-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:4:22-71
+10    <uses-permission android:name="android.permission.BLUETOOTH" />
+10-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:5:5-68
+10-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:5:22-65
+11    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+11-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:6:5-76
+11-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:6:22-73
+12    <uses-permission android:name="android.permission.CAMERA" />
+12-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:7:5-65
+12-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:7:22-62
+13    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+13-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:8:5-79
+13-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:8:22-76
+14    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+14-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:9:5-80
+14-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:9:22-77
+15    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+15-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:10:5-71
+15-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:10:22-68
+16    <uses-permission android:name="android.permission.INTERNET" />
+16-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:11:5-67
+16-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:11:22-64
+17    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+17-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:12:5-81
+17-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:12:22-78
+18    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+18-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:13:5-79
+18-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:13:22-76
+19    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+19-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:14:5-76
+19-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:14:22-73
+20    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+20-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:15:5-75
+20-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:15:22-72
+21    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+21-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:16:5-80
+21-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:16:22-77
+22    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+22-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:17:5-83
+22-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:17:22-80
+23
+24    <application android:supportsRtl="true" >
+24-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:19:5-24:19
+24-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:20:9-35
+25        <meta-data
+25-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:21:9-23:64
+26            android:name="rc.rtclib"
+26-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:22:13-37
+27            android:value="cn.rongcloud.rtc.api.RCRTCEngine" />
+27-->/Users/yongqiming/developer/Android/study/RongWeChat/RTCLib/AndroidManifest.xml:23:13-61
+28    </application>
+29
+30</manifest>

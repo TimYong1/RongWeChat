@@ -14,6 +14,8 @@ dependencyResolutionManagement {
         maven {url "https://maven.rongcloud.cn/repository/maven-releases/"}
     }
 }
-rootProject.name = "RongWeChat"
+rootProject.name = "testDemo"
 include ':app'
-include ':imkit'
+include ':CallLib'
+include ':IMLib'
+include ':RTCLib'

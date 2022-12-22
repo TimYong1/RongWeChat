@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: cn.rongcloud.sdk:rtc_lib:5.3.2.5@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/35c70f4fbbcc923f94c1f339fe0ad961/transformed/rtc_lib-5.3.2.5/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/35c70f4fbbcc923f94c1f339fe0ad961/transformed/rtc_lib-5.3.2.5/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/35c70f4fbbcc923f94c1f339fe0ad961/transformed/rtc_lib-5.3.2.5/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/35c70f4fbbcc923f94c1f339fe0ad961/transformed/rtc_lib-5.3.2.5/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -7,33 +7,91 @@
     android:orientation="vertical"
     tools:context=".activity.ChatLiveActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:orientation="horizontal"
+        android:layout_height="50dp"
+        android:background="@color/page_bg"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试界面"
+            android:layout_centerInParent="true"
+            android:textColor="@color/page_blue"
+            />
+
+        <TextView
+            android:id="@+id/btn_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="更多"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/page_blue"
+            />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         >
 
         <FrameLayout
             android:id="@+id/video_loca"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/rc_blue"
-            >
+            android:background="@color/page_bg">
 
         </FrameLayout>
 
-        <FrameLayout
-            android:id="@+id/video_remote"
-            android:layout_width="match_parent"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/all_moudle"
+            android:layout_width="80dp"
+            android:visibility="invisible"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/theme"
-            >
-
-        </FrameLayout>
+            android:layout_alignParentRight="true"
+            android:background="@color/page_bg" />
 
 
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        >
+
+        <Button
+            android:id="@+id/play_music"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="播放混音"
+            android:textColor="@color/page_blue"
+            />
+
+        <Button
+            android:id="@+id/get_long"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="获取播放时长"
+            android:textColor="@color/page_blue"
+            />
+
+        <Button
+            android:id="@+id/select"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="音频模式选择"
+            android:textColor="@color/page_blue"
+            />
     </LinearLayout>
+
+    </RelativeLayout>
 
 </LinearLayout>

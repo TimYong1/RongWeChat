@@ -8,6 +8,9 @@ public class MineFragment extends BaseFragment{
     private TextView name;
     private String nameString;
     private static final String TAG = "ContactsFragment";
+    public MineFragment(){
+
+    }
     public MineFragment(String name){
         this.nameString = name;
     }

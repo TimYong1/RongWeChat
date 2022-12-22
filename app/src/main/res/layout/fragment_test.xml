@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:padding="30dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/invite_userid"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="请输入要拨打的userid"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_start"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="拨打"
+        android:textColor="@color/page_blue"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_accept"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="接听"
+        android:textColor="@color/page_blue"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_hungup"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="挂断"
+        android:textColor="@color/page_blue"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/video_loca"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/page_blue"
+            android:layout_margin="30dp"
+            />
+
+        <FrameLayout
+            android:id="@+id/video_remote"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/page_bg"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

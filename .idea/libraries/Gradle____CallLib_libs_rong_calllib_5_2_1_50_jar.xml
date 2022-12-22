@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: ./CallLib/libs/rong_calllib_5.2.1.50.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/CallLib/libs/rong_calllib_5.2.1.50.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

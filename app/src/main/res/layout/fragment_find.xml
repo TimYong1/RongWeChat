@@ -1,18 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
 
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
     <Button
         android:id="@+id/live"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="zhibo"
-        android:layout_marginTop="100dp"
+        android:text="音视频直播"
+        android:layout_marginTop="20dp"
+        />
+    <Button
+        android:id="@+id/chat_room_send"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="聊天室发消息"
+        android:layout_marginTop="20dp"
         />
 
+    <Button
+        android:id="@+id/test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="加入聊天室"
+        android:layout_marginTop="20dp"
+        />
+
+    <Button
+        android:id="@+id/quite_chatroom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="退出聊天室"
+        android:layout_marginTop="20dp"
+        />
+
+    <Button
+        android:id="@+id/call"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="音视频通话"
+        android:layout_marginTop="20dp"
+        />
+
+    </LinearLayout>
 
 
-</LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/messages_list"
+        android:layout_width="100dp"
+        android:layout_height="300dp"
+        android:background="@color/page_bg"
+        android:layout_alignParentBottom="true"
+        />
+
+</RelativeLayout>

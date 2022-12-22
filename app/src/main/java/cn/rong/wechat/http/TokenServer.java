@@ -90,6 +90,4 @@ public class TokenServer {
         void success(String token);
         void error();
     }
-
-  //  javax.net.ssl.SSLHandshakeException: java.security.cert.CertPathValidatorException: Trust anchor for certification path not found.
 }

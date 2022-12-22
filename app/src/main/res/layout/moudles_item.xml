@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.utils.widget.MotionButton xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:text="test"
+    android:gravity="center"
+    android:textColor="@color/page_blue"
+    android:id="@+id/item_name"
+    android:textSize="20dp"
+    android:layout_marginTop="1dp"
+    android:background="@color/page_bg"
+    >
+</androidx.constraintlayout.utils.widget.MotionButton>

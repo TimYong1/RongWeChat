@@ -8,6 +8,9 @@ public class MessagesFragment extends  BaseFragment{
     private TextView mButton;
     private String nameString;
 
+    public MessagesFragment(){
+    }
+
     public MessagesFragment(String name){
         this.nameString = name;
     }

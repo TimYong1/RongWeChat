@@ -2,19 +2,20 @@ package cn.rong.wechat.http;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.net.Uri;
 import android.text.TextUtils;
+import android.util.Log;
 
 import androidx.appcompat.app.AlertDialog;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ToastUtils;
 
-import io.rong.imkit.RongIM;
+import java.util.StringTokenizer;
+
 import io.rong.imlib.IRongCallback;
 import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.Conversation;
 import io.rong.imlib.model.Message;
-import io.rong.imlib.model.UserInfo;
 import io.rong.message.TextMessage;
 
 /**
@@ -24,16 +25,25 @@ import io.rong.message.TextMessage;
 public class TimUtils {
 
 
-    public static boolean isRLogin = false;
-    private static UserInfo userInfo;
-    private static loginStatu mLoginStatu;
+    private boolean isRLogin = false;
+    private LoginStatu mLoginStatu;
+    private String userid,mToken;
+    public TimUtils(){
 
-    public static void getToken(String userId, String token ,loginStatu loginStatu) {
+    }
+
+    public TimUtils(String userId, String token){
+        this.userid = userId;
+        this.mToken = token;
+    }
+
+    public void getToken(LoginStatu loginStatu) {
         mLoginStatu = loginStatu;
-        if (TextUtils.isEmpty(token)){
-            TokenServer.getToken(userId, new TokenServer.tokenCallback() {
+        if (TextUtils.isEmpty(mToken)){
+            TokenServer.getToken(userid, new TokenServer.tokenCallback() {
                 @Override
                 public void success(String token) {
+                    LogUtils.e("token是---"+token);
                     conRongServer(token);
                 }
 
@@ -43,13 +53,14 @@ public class TimUtils {
                 }
             });
         }else {
-            conRongServer(token);
+            conRongServer(mToken);
         }
     }
 
-    public static void conRongServer(String token) {
-        if (!TextUtils.isEmpty(token)) {
-            RongIM.connect(token, new RongIMClient.ConnectCallback() {
+    private void conRongServer(String token) {
+      //  String token11 = "0DXyAhAh8COPPjG/mqOaExvBa5RwKCuMzBcGhPWG0Mg=@1rhg.sg.rongnav.com;1rhg.sg.rongcfg.com";
+       // String token11 = "0DXyAhAh8COPPjG/mqOaExvBa5RwKCuM98vC95qA+Wg=@1rhg.sg.rongnav.com;1rhg.sg.rongcfg.com";
+            RongIMClient.connect(token, new RongIMClient.ConnectCallback() {
                 @Override
                 public void onSuccess(String s) {
                     isRLogin = true;
@@ -70,24 +81,16 @@ public class TimUtils {
 
                 @Override
                 public void onDatabaseOpened(RongIMClient.DatabaseOpenStatus databaseOpenStatus) {
+                    mLoginStatu.loginFail();
                 }
             });
-        } else {
-
-        }
     }
 
     private static void sendMessage() {
         String content = "你好";
         Conversation.ConversationType conversationType = Conversation.ConversationType.PRIVATE;
-        // 构建消息
         TextMessage messageContent = TextMessage.obtain(content);
-//        userInfo = new UserInfo(Config.hw, "我是小米", Uri.parse(""));
-//        messageContent.setUserInfo(userInfo);
-        //RongUserInfoManager.getInstance().refreshUserInfoCache(userInfo);
         Message message = Message.obtain("222", conversationType, messageContent);
-
-        // 发送消息
         RongIMClient.getInstance().sendMessage(message, null, null, new IRongCallback.ISendMessageCallback() {
             @Override
             public void onAttached(Message message) {
@@ -106,7 +109,7 @@ public class TimUtils {
         });
     }
 
-    public interface loginStatu {
+    public interface LoginStatu {
         void loginSuccess();
 
         void loginFail();

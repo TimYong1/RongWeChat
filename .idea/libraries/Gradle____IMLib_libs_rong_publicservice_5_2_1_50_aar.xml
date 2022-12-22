@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: ./IMLib/libs/rong_publicservice_5.2.1.50.aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/ee64feb12acaf0956a46328e7d44d2dc/transformed/rong_publicservice_5.2.1.50/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ee64feb12acaf0956a46328e7d44d2dc/transformed/rong_publicservice_5.2.1.50/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ee64feb12acaf0956a46328e7d44d2dc/transformed/rong_publicservice_5.2.1.50/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

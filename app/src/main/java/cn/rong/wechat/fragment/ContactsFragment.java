@@ -9,6 +9,9 @@ public class ContactsFragment extends BaseFragment{
     private TextView name;
     private String nameString;
     private static final String TAG = "ContactsFragment";
+    public  ContactsFragment(){
+
+    }
     public  ContactsFragment(String name){
         this.nameString = name;
     }
