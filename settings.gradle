@@ -16,6 +16,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "testDemo"
 include ':app'
-include ':CallLib'
-include ':IMLib'
-include ':RTCLib'

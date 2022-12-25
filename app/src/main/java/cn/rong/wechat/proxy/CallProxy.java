@@ -32,12 +32,6 @@ public class CallProxy implements IRongCallListener {
           this.mAcceptButton = accept;
     }
 
-
-    @Override
-    public void onCallIncoming(RongCallSession callSession, SurfaceView localVideo) {
-
-    }
-
     @Override
     public void onCallOutgoing(RongCallSession callSession, SurfaceView localVideo) {
         addlocaview(localVideo);
@@ -115,11 +109,6 @@ public class CallProxy implements IRongCallListener {
 
     @Override
     public void onFirstRemoteVideoFrame(String userId, int height, int width) {
-
-    }
-
-    @Override
-    public void onFirstRemoteAudioFrame(String userId) {
 
     }
 

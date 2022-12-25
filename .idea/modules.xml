@@ -19,10 +19,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/testDemo.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/testDemo.app.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/testDemo.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/testDemo.app.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/testDemo.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/testDemo.app.unitTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/testmoudle/testDemo.testmoudle.iml" filepath="$PROJECT_DIR$/.idea/modules/testmoudle/testDemo.testmoudle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/testmoudle/testDemo.testmoudle.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/testmoudle/testDemo.testmoudle.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/testmoudle/testDemo.testmoudle.main.iml" filepath="$PROJECT_DIR$/.idea/modules/testmoudle/testDemo.testmoudle.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/testmoudle/testDemo.testmoudle.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/testmoudle/testDemo.testmoudle.unitTest.iml" />
     </modules>
   </component>
 </project>

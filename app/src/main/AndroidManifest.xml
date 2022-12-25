@@ -40,6 +40,10 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+
+        <activity
+            android:exported="false"
+            android:name=".anull.RTCActivity" />
     </application>
 
 </manifest>
