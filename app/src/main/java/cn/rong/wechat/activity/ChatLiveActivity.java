@@ -34,7 +34,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.rong.wechat.R;
-import cn.rong.wechat.activity.test.JavaRenderer;
 import cn.rong.wechat.adapter.AllMoudleAdadpter;
 import cn.rong.wechat.moudle.MoudlesData;
 import cn.rong.wechat.moudle.OnRecyclerItemClick;
@@ -92,7 +91,9 @@ public class ChatLiveActivity extends BaseActivity implements View.OnClickListen
    // private VideoRendererView rendererView1;
 
     private GLSurfaceView mGlSurfaceView;
-    private JavaRenderer mRenderer;
+    private int fd;
+    private int width;
+    // private JavaRenderer mRenderer;
 
     public static void start(Context context,int role,String roomid) {
         Intent intent = new Intent();
@@ -132,6 +133,7 @@ public class ChatLiveActivity extends BaseActivity implements View.OnClickListen
         video_loca.post(new Runnable() {
             @Override
             public void run() {
+                width = video_loca.getWidth();
                 videoViewManager = new VideoViewManager(video_loca,video_loca.getWidth(),video_loca.getHeight());
             }
         });
@@ -189,18 +191,18 @@ public class ChatLiveActivity extends BaseActivity implements View.OnClickListen
 
         RCRTCEngine.getInstance().init(this.getApplicationContext(), builder.build());
         RCRTCEngine.getInstance().registerStatusReportListener(ircrtcStatusReportListener);
-        RCRTCEngine.getInstance().registerEventListener(ircrtcEngineEventListener);
         getPermission();
         RCRTCEngine.getInstance().registerEventListener(new IRCRTCEngineEventListener() {
             @Override
             public void onKicked(String roomId, RCRTCParamsType.RCRTCKickedReason kickedReason) {
                 ToastUtils.showLong("您被踢出音视频房间" + roomId + "原因--" + kickedReason.name());
                 Log.e(TAG, "您被踢出音视频房间" + roomId + "原因--" + kickedReason.name());
+
             }
         });
-     //   RCRTCEngine.getInstance().getDefaultAudioStream().setAudioQuality(RCRTCParamsType.AudioQuality.SPEECH, RCRTCParamsType.AudioScenario.GAMING_CHATROOM);
-        File file = getExternalFilesDir(Environment.DIRECTORY_MUSIC);
-        LogUtils.e(file.getAbsolutePath());
+
+//        File file = getExternalFilesDir(Environment.DIRECTORY_MUSIC);
+//        LogUtils.e(file.getAbsolutePath());
 //        file1 = file.listFiles()[0];
 //        LogUtils.e("AAAAA", file1.getAbsolutePath());
 //        File file5 = new File("/storage/emulated/0/Android/data/cn.rong.wechat/");
@@ -212,11 +214,12 @@ public class ChatLiveActivity extends BaseActivity implements View.OnClickListen
 
         mGlSurfaceView = new GLSurfaceView(this);
         mGlSurfaceView.setEGLContextClientVersion(3); // 设置OpenGL版本号
-        mRenderer = new JavaRenderer(this);
-        mGlSurfaceView.setRenderer(mRenderer);
-        mGlSurfaceView.setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY); // 设置渲染模式为仅当手动执行requestRender时才绘制
-        // 实际场景中，可能是在相机预览回调或解码回调中调用，这里仅使用预设的yuv图片做示例
-        remote_video_view.addView(mGlSurfaceView);
+        RCRTCEngine.getInstance().getDefaultAudioStream().setAudioQuality(RCRTCParamsType.AudioQuality.MUSIC_HIGH, RCRTCParamsType.AudioScenario.MUSIC_CHATROOM);
+      //  mRenderer = new JavaRenderer(this);
+//        mGlSurfaceView.setRenderer(mRenderer);
+//        mGlSurfaceView.setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY); // 设置渲染模式为仅当手动执行requestRender时才绘制
+//        // 实际场景中，可能是在相机预览回调或解码回调中调用，这里仅使用预设的yuv图片做示例
+//        remote_video_view.addView(mGlSurfaceView);
 
 
     }
@@ -224,7 +227,7 @@ public class ChatLiveActivity extends BaseActivity implements View.OnClickListen
     private void drawYuv(ByteBuffer buffery,ByteBuffer bufferu,ByteBuffer bufferv,int width,int mPreviewHeight) {
         // 绘制的width必须是8的倍数，height必须是2的倍数，如果不是则需要对齐到8的倍数，否则渲染的结果不对
 
-        mRenderer.setYuvData(buffery, bufferu,bufferv,width, mPreviewHeight);
+      //  mRenderer.setYuvData(buffery, bufferu,bufferv,width, mPreviewHeight);
 //        byte[] i420 = FileUtil.getAssertData(this, "204x360_i420.yuv");
 //        mRenderer.setYuvData(i420, 204, 360);
         mGlSurfaceView.requestRender(); // 手动触发渲染
@@ -287,7 +290,7 @@ public class ChatLiveActivity extends BaseActivity implements View.OnClickListen
     @Override
     protected void onStop() {
         super.onStop();
-        RCRTCEngine.getInstance().unInit();
+       // RCRTCEngine.getInstance().unInit();
     }
 
     @Override
@@ -318,13 +321,6 @@ public class ChatLiveActivity extends BaseActivity implements View.OnClickListen
                 ToastUtils.showLong("发布失败");
             }
         });
-
-        RCRTCEngine.getInstance().registerEventListener(new IRCRTCEngineEventListener() {
-            @Override
-            public void onKicked(String roomId, RCRTCParamsType.RCRTCKickedReason kickedReason) {
-
-            }
-        });
     }
 
 
@@ -349,13 +345,13 @@ public class ChatLiveActivity extends BaseActivity implements View.OnClickListen
             for (RCRTCInputStream stream : remoteUser.getStreams()) {
                 if (stream.getMediaType() == RCRTCMediaType.VIDEO){
                     inputStreams.add(stream);
-                    ((RCRTCVideoInputStream)stream).setVideoFrameListener(new IRCRTCVideoInputFrameListener() {
-                        @Override
-                        public void onFrame(RCRTCRemoteVideoFrame videoFrame) {
-                            setVideoFrame(videoFrame);
-
-                        }
-                    });
+//                    ((RCRTCVideoInputStream)stream).setVideoFrameListener(new IRCRTCVideoInputFrameListener() {
+//                        @Override
+//                        public void onFrame(RCRTCRemoteVideoFrame videoFrame) {
+//                            setVideoFrame(videoFrame);
+//
+//                        }
+//                    });
                 }
                 streams.add(stream);
             }
@@ -514,7 +510,7 @@ public class ChatLiveActivity extends BaseActivity implements View.OnClickListen
                     RCRTCEngine.getInstance().getDefaultAudioStream().adjustRecordingVolume(100);
                 }else {
                     ToastUtils.showShort("开黑");
-                 //   RCRTCEngine.getInstance().getDefaultAudioStream().setAudioQuality(RCRTCParamsType.AudioQuality.SPEECH, RCRTCParamsType.AudioScenario.GAMING_CHATROOM);
+                   // RCRTCEngine.getInstance().getDefaultAudioStream().setAudioQuality(RCRTCParamsType.AudioQuality.SPEECH, RCRTCParamsType.AudioScenario.GAMING_CHATROOM);
                     RCRTCEngine.getInstance().getDefaultAudioStream().adjustRecordingVolume(100);
                 }
                 dialog.dismiss();
@@ -561,7 +557,10 @@ public class ChatLiveActivity extends BaseActivity implements View.OnClickListen
      //String pathurl  = file1.getAbsolutePath();
 
     private void startMix() {
-        RCRTCAudioMixer.getInstance().startMix(file1.getAbsolutePath(), RCRTCAudioMixer.Mode.MIX, true, -1);
+//        if (RCRTCEngine.getInstance().getDefaultAudioStream().getAudioScenario() == RCRTCParamsType.AudioScenario.GAMING_CHATROOM){
+//            RCRTCEngine.getInstance().getDefaultAudioStream().setAudioQuality(RCRTCParamsType.AudioQuality.MUSIC_HIGH, RCRTCParamsType.AudioScenario.MUSIC_CHATROOM);
+//        }
+        RCRTCAudioMixer.getInstance().startMix(url, RCRTCAudioMixer.Mode.MIX, true, -1);
     }
 
 class  TestHandle extends Handler{

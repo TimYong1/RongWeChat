@@ -18,6 +18,7 @@ import java.util.Random;
 import cn.rong.wechat.MainActivity;
 import cn.rong.wechat.R;
 import cn.rong.wechat.http.TimUtils;
+import cn.rong.wechat.yuv.RTCActivity;
 
 public class SplaceActivity extends BaseActivity implements View.OnClickListener {
 
@@ -71,7 +72,7 @@ public class SplaceActivity extends BaseActivity implements View.OnClickListener
                 ToastUtils.showLong("连接成功");
                 MainActivity.start(SplaceActivity.this);
             //    RouteUtils.registerActivity(RouteUtils.RongActivityType.ConversationActivity, ConverstatinActivity.class);
-                finish();
+               // finish();
             }
 
             @Override

@@ -13,6 +13,7 @@ import com.google.android.material.button.MaterialButton;
 
 import java.util.HashMap;
 
+import io.rong.callkit.RongCallKit;
 import io.rong.calllib.IRongCallListener;
 import io.rong.calllib.RongCallCommon;
 import io.rong.calllib.RongCallSession;
@@ -30,6 +31,20 @@ public class CallProxy implements IRongCallListener {
           this.mRemoteVideo = remoteVideo;
           this.mContext = context;
           this.mAcceptButton = accept;
+    }
+
+//    @Override
+//    public void onCallIncoming(RongCallSession callSession, SurfaceView localVideo) {
+//
+//    }
+
+//    @Override
+//    public void onCallIncoming(RongCallSession callSession, SurfaceView localVideo) {
+//
+//    }
+
+    @Override
+    public void onCallIncoming(RongCallSession callSession, SurfaceView localVideo) {
     }
 
     @Override
@@ -111,6 +126,16 @@ public class CallProxy implements IRongCallListener {
     public void onFirstRemoteVideoFrame(String userId, int height, int width) {
 
     }
+
+    @Override
+    public void onFirstRemoteAudioFrame(String userId) {
+
+    }
+
+//    @Override
+//    public void onFirstRemoteAudioFrame(String userId) {
+//
+//    }
 
 
     @Override

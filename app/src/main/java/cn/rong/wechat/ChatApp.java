@@ -14,9 +14,16 @@ import io.rong.imlib.RongIMClient;
 public class ChatApp extends Application {
     private static final String TAG = "ChatApp";
 
+    private static ChatApp INSTANCE;
+
     @Override
     public void onCreate() {
+        INSTANCE = this;
         super.onCreate();
         RongIMClient.init(this, Config.App_key);
+    }
+
+    public static ChatApp getApplication() {
+        return INSTANCE;
     }
 }

@@ -2,7 +2,6 @@
   <library name="Gradle: cn.rongcloud.sdk:im_chatroom:5.3.2@aar">
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/8e59e398d6915c65271b6f568e0bf9d7/transformed/im_chatroom-5.3.2/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/8e59e398d6915c65271b6f568e0bf9d7/transformed/im_chatroom-5.3.2/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/8e59e398d6915c65271b6f568e0bf9d7/transformed/im_chatroom-5.3.2/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />

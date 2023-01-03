@@ -43,7 +43,7 @@
 
         <activity
             android:exported="false"
-            android:name=".anull.RTCActivity" />
+            android:name=".yuv.RTCActivity" />
     </application>
 
 </manifest>

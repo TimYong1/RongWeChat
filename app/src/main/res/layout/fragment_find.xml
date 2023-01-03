@@ -5,8 +5,6 @@
     android:orientation="vertical"
     >
 
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,7 +14,7 @@
         android:id="@+id/live"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="音视频直播"
+        android:text="渲染远端流掩饰"
         android:layout_marginTop="20dp"
         />
     <Button
@@ -24,6 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="聊天室发消息"
+        android:visibility="gone"
         android:layout_marginTop="20dp"
         />
 
@@ -32,6 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="加入聊天室"
+        android:visibility="gone"
         android:layout_marginTop="20dp"
         />
 
@@ -40,6 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="退出聊天室"
+        android:visibility="gone"
         android:layout_marginTop="20dp"
         />
 
@@ -48,6 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="音视频通话"
+        android:visibility="gone"
         android:layout_marginTop="20dp"
         />
 
@@ -57,6 +59,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/messages_list"
         android:layout_width="100dp"
+        android:visibility="gone"
         android:layout_height="300dp"
         android:background="@color/page_bg"
         android:layout_alignParentBottom="true"

@@ -2,7 +2,6 @@
   <library name="Gradle: cn.rongcloud.sdk:im_discussion:5.3.2@aar">
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/b4f56c77af885ab0200f4dd05c2e9a09/transformed/im_discussion-5.3.2/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b4f56c77af885ab0200f4dd05c2e9a09/transformed/im_discussion-5.3.2/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b4f56c77af885ab0200f4dd05c2e9a09/transformed/im_discussion-5.3.2/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />

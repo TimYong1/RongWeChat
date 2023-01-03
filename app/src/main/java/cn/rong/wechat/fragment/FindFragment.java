@@ -20,6 +20,8 @@ import cn.rong.wechat.R;
 import cn.rong.wechat.activity.CallLibActivity;
 import cn.rong.wechat.activity.PreviewLiveActivity;
 import cn.rong.wechat.adapter.MessageAdapter;
+import cn.rong.wechat.yuv.RTCActivity;
+import io.rong.callkit.RongCallKit;
 import io.rong.imlib.IRongCoreCallback;
 import io.rong.imlib.IRongCoreEnum;
 import io.rong.imlib.chatroom.base.RongChatRoomClient;
@@ -201,10 +203,7 @@ public class FindFragment extends BaseFragment implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.live:
-               //  ChatLiveActivity.start(getActivity());
                 PreviewLiveActivity.start(getActivity());
-                //   startMix();
-               // sendMessage();
                 break;
             case R.id.test:
                 joinChatRoom();

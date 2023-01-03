@@ -91,9 +91,9 @@ public class MainActivity extends FragmentActivity {
         BadgeDrawable findBadge = bottomNavigationView.getOrCreateBadge(R.id.navigation_find);
         chatBadge.setNumber(30);
         findBadge.setBounds(1, 1, 1, 1);
+        fragments.add(new FindFragment("发现"));
         fragments.add(new ContactsFragment());
         fragments.add(new ContactsFragment("通讯录"));
-        fragments.add(new FindFragment("发现"));
         fragments.add(new MessagesFragment("我的"));
         mainPagerAdapter = new MainPagerAdapter(this, fragments);
         viewPager2.setAdapter(mainPagerAdapter);

@@ -3,6 +3,7 @@ package cn.rong.wechat.proxy;
 import android.os.Handler;
 
 import com.blankj.utilcode.util.LogUtils;
+import com.blankj.utilcode.util.ToastUtils;
 
 import java.util.List;
 
@@ -39,17 +40,19 @@ public class LiveBrodcaster extends IRCRTCRoomEventsListener {
 
     @Override
     public void onUserJoined(RCRTCRemoteUser remoteUser) {
-
+        ToastUtils.showShort("主播加入"+remoteUser.getUserId());
     }
 
     @Override
     public void onUserLeft(RCRTCRemoteUser remoteUser) {
-
+        LogUtils.e("主播离开了",remoteUser.getUserId());
+        ToastUtils.showShort("主播离开了"+remoteUser.getUserId());
     }
 
     @Override
     public void onUserOffline(RCRTCRemoteUser remoteUser) {
-
+       LogUtils.e("主播离线了",remoteUser.getUserId());
+        ToastUtils.showShort("主播离线了"+remoteUser.getUserId());
     }
 
     @Override

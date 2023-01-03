@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: cn.rongcloud.sdk:call_kit:5.3.2.6@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/d69d341780ad1eb6b8a964fd51605849/transformed/call_kit-5.3.2.6/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/d69d341780ad1eb6b8a964fd51605849/transformed/call_kit-5.3.2.6/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/d69d341780ad1eb6b8a964fd51605849/transformed/call_kit-5.3.2.6/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

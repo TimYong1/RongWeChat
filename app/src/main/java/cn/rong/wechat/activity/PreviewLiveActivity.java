@@ -9,10 +9,7 @@ import androidx.constraintlayout.utils.widget.MotionButton;
 import com.google.android.material.textfield.TextInputEditText;
 
 import cn.rong.wechat.R;
-import cn.rong.wechat.activity.viewmoudle.PreviewLiveViewMoudle;
-import cn.rong.wechat.anull.MainActivity;
-import cn.rong.wechat.anull.RTCActivity;
-import cn.rongcloud.rtc.api.RCRTCConfig;
+import cn.rong.wechat.yuv.RTCActivity;
 import cn.rongcloud.rtc.base.RCRTCLiveRole;
 
 public class PreviewLiveActivity extends BaseActivity implements View.OnClickListener {
@@ -48,9 +45,7 @@ public class PreviewLiveActivity extends BaseActivity implements View.OnClickLis
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.brodcaster:
-                Intent intent = new Intent(this, RTCActivity.class);
-                startActivity(intent);
-             //  ChatLiveActivity.start(this, RCRTCLiveRole.BROADCASTER.getType(),live_roomid.getText().toString());
+              ChatLiveActivity.start(this, RCRTCLiveRole.BROADCASTER.getType(),live_roomid.getText().toString());
                 break;
             case R.id.audience:
                 ChatLiveActivity.start(this, RCRTCLiveRole.AUDIENCE.getType(),live_roomid.getText().toString());

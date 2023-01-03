@@ -1,6 +1,8 @@
 package cn.rong.wechat.http;
 
 
+import android.webkit.WebSettings;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -10,6 +12,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Random;
 
+import cn.rong.wechat.ChatApp;
 import cn.rong.wechat.common.Config;
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
@@ -40,6 +43,7 @@ public class TokenServer {
                         .addHeader("Nonce", String.valueOf(nonce))
                         .addHeader("Signature", signature)
                         .addHeader("App-Key", Config.App_key)
+                        .addHeader("User-Agent", WebSettings.getDefaultUserAgent(ChatApp.getApplication()))
                         .post(requestBody)
                         .build();
                 try {

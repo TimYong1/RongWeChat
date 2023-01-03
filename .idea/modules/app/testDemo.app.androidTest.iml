@@ -113,7 +113,6 @@
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.recyclerview:recyclerview:1.1.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.transition:transition:1.2.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.viewpager2:viewpager2:1.0.0@aar" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: cn.rongcloud.sdk:im_kit:5.3.2@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: cn.rongcloud.sdk:im_lib:5.3.2@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: cn.rongcloud.sdk:im_libcore:5.3.2@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: cn.rongcloud.sdk:crash:1.0.5@aar" level="project" />
@@ -122,6 +121,10 @@
     <orderEntry type="library" scope="TEST" name="Gradle: cn.rongcloud.sdk:im_discussion:5.3.2@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: cn.rongcloud.sdk:im_customservice:5.3.2@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: cn.rongcloud.sdk:im_publicservice:5.3.2@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: cn.rongcloud.sdk:rtc_lib:5.3.2.6@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: cn.rongcloud.sdk:player:5.3.2.6@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: cn.rongcloud.sdk:call_lib:5.3.2.6@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: cn.rongcloud.sdk:im_kit:5.3.2@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.swiperefreshlayout:swiperefreshlayout:1.1.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.room:room-runtime:2.4.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.sqlite:sqlite-framework:2.2.0@aar" level="project" />
@@ -129,9 +132,6 @@
     <orderEntry type="library" scope="TEST" name="Gradle: com.github.bumptech.glide:glide:4.11.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.github.bumptech.glide:gifdecoder:4.11.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.exifinterface:exifinterface:1.0.0@aar" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: cn.rongcloud.sdk:rtc_lib:5.3.2.5@aar" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: cn.rongcloud.sdk:player:5.3.2.5@aar" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: cn.rongcloud.sdk:call_lib:5.3.2.5@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.android.support:multidex:1.0.3@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.blankj:utilcodex:1.31.0@aar" level="project" />
   </component>
