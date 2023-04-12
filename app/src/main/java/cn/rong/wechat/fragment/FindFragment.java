@@ -27,6 +27,7 @@ import cn.rong.wechat.activity.NextActivity;
 import cn.rong.wechat.activity.PreviewLiveActivity;
 import cn.rong.wechat.activity.permission.RongCallPermissionUtil;
 import cn.rong.wechat.adapter.MessageAdapter;
+import io.rong.calllib.RongCallClient;
 import io.rong.calllib.RongCallCommon;
 import io.rong.imlib.IRongCoreCallback;
 import io.rong.imlib.IRongCoreEnum;
@@ -292,6 +293,7 @@ public class FindFragment extends BaseFragment implements View.OnClickListener {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        RongCallClient.getInstance().setVoIPCallListener(null);
     }
 
     private void joinChatRoom(){
