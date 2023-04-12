@@ -2,11 +2,13 @@ package cn.rong.wechat.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 
 import androidx.constraintlayout.utils.widget.MotionButton;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.google.android.material.textfield.TextInputEditText;
 
 import cn.rong.wechat.R;
@@ -56,7 +58,8 @@ public class PreviewLiveActivity extends BaseActivity implements View.OnClickLis
         rcrtcVideoView.setScalingType(RendererCommon.ScalingType.SCALE_ASPECT_FILL);
         RCRTCEngine.getInstance().getDefaultVideoStream().setVideoView(rcrtcVideoView);
         view_video.addView(rcrtcVideoView);
-
+        LogUtils.e("AAA","create");
+        LogUtils.e("AAA","create");
     }
 
     @Override
