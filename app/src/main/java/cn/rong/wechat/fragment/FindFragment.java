@@ -293,7 +293,6 @@ public class FindFragment extends BaseFragment implements View.OnClickListener {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        RongCallClient.getInstance().setVoIPCallListener(null);
     }
 
     private void joinChatRoom(){

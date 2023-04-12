@@ -62,6 +62,9 @@ public class NextActivity extends AppCompatActivity {
                     mDrawerLayout.closeDrawer(GravityCompat.END);
                 }else {
                     LogUtils.e("关闭着");
+                    LogUtils.e("关闭着");
+                    LogUtils.e("关闭着");
+                    LogUtils.e("关闭着");
                     mDrawerLayout.openDrawer(GravityCompat.END);
                 }
 
