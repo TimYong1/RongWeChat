@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">yuvdemo</string>
+    <string name="app_name">rongdemo</string>
+    <string name="drawer_layout_open">Open</string>
+    <string name="drawer_layout_close">Close</string>
 </resources>

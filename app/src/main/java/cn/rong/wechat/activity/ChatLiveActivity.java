@@ -31,6 +31,7 @@ import com.blankj.utilcode.util.ToastUtils;
 import java.io.File;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import cn.rong.wechat.R;
@@ -46,13 +47,11 @@ import cn.rongcloud.rtc.api.RCRTCEngine;
 import cn.rongcloud.rtc.api.RCRTCRemoteUser;
 import cn.rongcloud.rtc.api.RCRTCRoom;
 import cn.rongcloud.rtc.api.RCRTCRoomConfig;
-import cn.rongcloud.rtc.api.RCRTCVideoStream;
 import cn.rongcloud.rtc.api.callback.IRCRTCEngineEventListener;
 import cn.rongcloud.rtc.api.callback.IRCRTCResultCallback;
 import cn.rongcloud.rtc.api.callback.IRCRTCResultDataCallback;
 import cn.rongcloud.rtc.api.callback.IRCRTCStatusReportListener;
 import cn.rongcloud.rtc.api.callback.IRCRTCVideoInputFrameListener;
-import cn.rongcloud.rtc.api.report.RCRTCLiveAudioState;
 import cn.rongcloud.rtc.api.report.StatusReport;
 import cn.rongcloud.rtc.api.stream.RCRTCAudioStreamConfig;
 import cn.rongcloud.rtc.api.stream.RCRTCCameraOutputStream;
@@ -60,15 +59,11 @@ import cn.rongcloud.rtc.api.stream.RCRTCInputStream;
 import cn.rongcloud.rtc.api.stream.RCRTCOutputStream;
 import cn.rongcloud.rtc.api.stream.RCRTCVideoInputStream;
 import cn.rongcloud.rtc.api.stream.RCRTCVideoView;
-import cn.rongcloud.rtc.api.stream.view.RCRTCRendererEventsListener;
-import cn.rongcloud.rtc.base.RCRTCAudioEventCode;
-import cn.rongcloud.rtc.base.RCRTCConnectionState;
 import cn.rongcloud.rtc.base.RCRTCLiveRole;
 import cn.rongcloud.rtc.base.RCRTCMediaType;
 import cn.rongcloud.rtc.base.RCRTCParamsType;
 import cn.rongcloud.rtc.base.RCRTCRemoteVideoFrame;
 import cn.rongcloud.rtc.base.RCRTCRoomType;
-import cn.rongcloud.rtc.base.RCRTCVideoEventCode;
 import cn.rongcloud.rtc.base.RTCErrorCode;
 
 public class ChatLiveActivity extends BaseActivity implements View.OnClickListener {
@@ -76,7 +71,7 @@ public class ChatLiveActivity extends BaseActivity implements View.OnClickListen
 
     private RCRTCRoom mRoom;
     private String  roomid;
-    private Button play_music, getLong,select;
+    private Button play_music, getLong,select,leave_room;
     private String path;
     private int  mRole ;
     private TextView mMoreBtn;
@@ -118,6 +113,7 @@ public class ChatLiveActivity extends BaseActivity implements View.OnClickListen
         select = findViewById(R.id.select);
         mAllMoudle = findViewById(R.id.all_moudle);
         mMoreBtn = findViewById(R.id.btn_more);
+        leave_room = findViewById(R.id.leave_room);
         remote_video_view = findViewById(R.id.remote_video_view);
         MoudlesData moudlesData= new MoudlesData();
         moudleAdadpter = new AllMoudleAdadpter(moudlesData.getMoudlesData());
@@ -127,6 +123,7 @@ public class ChatLiveActivity extends BaseActivity implements View.OnClickListen
         getLong.setOnClickListener(this);
         select.setOnClickListener(this);
         mMoreBtn.setOnClickListener(this);
+        leave_room.setOnClickListener(this);
         mRole = getIntent().getIntExtra("liveRole",1);
         roomid = getIntent().getStringExtra("liveRoomid");
        LogUtils.e(TAG,"身份为"+mRole);
@@ -215,11 +212,22 @@ public class ChatLiveActivity extends BaseActivity implements View.OnClickListen
         mGlSurfaceView = new GLSurfaceView(this);
         mGlSurfaceView.setEGLContextClientVersion(3); // 设置OpenGL版本号
         RCRTCEngine.getInstance().getDefaultAudioStream().setAudioQuality(RCRTCParamsType.AudioQuality.MUSIC_HIGH, RCRTCParamsType.AudioScenario.MUSIC_CHATROOM);
-      //  mRenderer = new JavaRenderer(this);
-//        mGlSurfaceView.setRenderer(mRenderer);
-//        mGlSurfaceView.setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY); // 设置渲染模式为仅当手动执行requestRender时才绘制
-//        // 实际场景中，可能是在相机预览回调或解码回调中调用，这里仅使用预设的yuv图片做示例
-//        remote_video_view.addView(mGlSurfaceView);
+//        RCRTCEngine.getInstance().registerStatusReportListener(new IRCRTCStatusReportListener() {
+//            @Override
+//            public void reportLiveAudioStates(List<RCRTCLiveAudioState> audioStates) {
+//                super.reportLiveAudioStates(audioStates);
+//                LogUtils.e("reportLiveAudioStates",audioStates.get(0).userId+audioStates.get(0).audioLevel);
+//            }
+//
+//            @Override
+//            public void onConnectionStats(StatusReport statusReport) {
+//                super.onConnectionStats(statusReport);
+//            }
+//        });
+
+
+
+
 
 
     }
@@ -313,7 +321,6 @@ public class ChatLiveActivity extends BaseActivity implements View.OnClickListen
                         subscribeStreams();
                     }
                 });
-
             }
 
             @Override
@@ -332,33 +339,17 @@ public class ChatLiveActivity extends BaseActivity implements View.OnClickListen
         for (RCRTCOutputStream outputStream : mRoom.getLocalUser().getStreams()){
             if (outputStream.getMediaType() == RCRTCMediaType.VIDEO){
                 outputStreams.add(outputStream);
-//                ((RCRTCCameraOutputStream)outputStream).setVideoFrameListener(new IRCRTCVideoOutputFrameListener() {
-//                    @Override
-//                    public RCRTCVideoFrame processVideoFrame(RCRTCVideoFrame rtcVideoFrame) {
-//                        return null;
-//                    }
-//                });
             }
         }
-
         for (RCRTCRemoteUser remoteUser : remoteUsers) {
             for (RCRTCInputStream stream : remoteUser.getStreams()) {
                 if (stream.getMediaType() == RCRTCMediaType.VIDEO){
                     inputStreams.add(stream);
-//                    ((RCRTCVideoInputStream)stream).setVideoFrameListener(new IRCRTCVideoInputFrameListener() {
-//                        @Override
-//                        public void onFrame(RCRTCRemoteVideoFrame videoFrame) {
-//                            setVideoFrame(videoFrame);
-//
-//                        }
-//                    });
                 }
                 streams.add(stream);
             }
         }
-       // remote_video_view.addView(rendererView1);
-        LogUtils.e("onRenderFrame"+"222");
-      //  updataUI(outputStreams,inputStreams);
+//        updataUI(outputStreams,inputStreams);
         if (streams.size()==0){
            ToastUtils.showLong("房间内没有用户");
             return;
@@ -376,36 +367,36 @@ public class ChatLiveActivity extends BaseActivity implements View.OnClickListen
         });
     }
 
-    private void setVideoFrame(RCRTCRemoteVideoFrame videoFrame){
-        RCRTCRemoteVideoFrame.RTCBufferI420 buffer = (RCRTCRemoteVideoFrame.RTCBufferI420) videoFrame.getBuffer();
-        LogUtils.e("videoFrame",buffer.getDataU());
-        drawYuv(buffer.getDataY(),buffer.getDataU(),buffer.getDataV(),buffer.getWidth(),buffer.getHeight());
-
-    }
-
-    private void updataUI(List<RCRTCOutputStream> outputStreams ,List<RCRTCInputStream> inputStreams){
-        List<RCRTCVideoView> videoViews = new ArrayList<>();
-        for (RCRTCOutputStream outputStream : outputStreams) {
-            RCRTCVideoView videoView = new RCRTCVideoView(this);
-            ((RCRTCCameraOutputStream)outputStream).setVideoView(videoView);
-            videoViews.add(videoView);
-            videoView.setRendererEventsListener(new RCRTCRendererEventsListener() {
-                @Override
-                public void onFirstFrame() {
-
-                }
-            });
-        }
-        for (RCRTCInputStream inputStream : inputStreams) {
-            RCRTCVideoView rcrtcVideoView = new RCRTCVideoView(this);
-            ((RCRTCVideoStream)inputStream).setVideoView(rcrtcVideoView);
-            videoViews.add(rcrtcVideoView);
-        }
-        if (videoViewManager!=null){
-            videoViewManager.update((ArrayList<RCRTCVideoView>) videoViews);
-        }
-
-    }
+//    private void setVideoFrame(RCRTCRemoteVideoFrame videoFrame){
+//        RCRTCRemoteVideoFrame.RTCBufferI420 buffer = (RCRTCRemoteVideoFrame.RTCBufferI420) videoFrame.getBuffer();
+//        LogUtils.e("videoFrame",buffer.getDataU());
+//        drawYuv(buffer.getDataY(),buffer.getDataU(),buffer.getDataV(),buffer.getWidth(),buffer.getHeight());
+//
+//    }
+//
+//    private void updataUI(List<RCRTCOutputStream> outputStreams ,List<RCRTCInputStream> inputStreams){
+//        List<RCRTCVideoView> videoViews = new ArrayList<>();
+//        for (RCRTCOutputStream outputStream : outputStreams) {
+//            RCRTCVideoView videoView = new RCRTCVideoView(this);
+//            ((RCRTCCameraOutputStream)outputStream).setVideoView(videoView);
+//            videoViews.add(videoView);
+//            videoView.setRendererEventsListener(new RCRTCRendererEventsListener() {
+//                @Override
+//                public void onFirstFrame() {
+//
+//                }
+//            });
+//        }
+//        for (RCRTCInputStream inputStream : inputStreams) {
+//            RCRTCVideoView rcrtcVideoView = new RCRTCVideoView(this);
+//            ((RCRTCVideoStream)inputStream).setVideoView(rcrtcVideoView);
+//            videoViews.add(rcrtcVideoView);
+//        }
+//        if (videoViewManager!=null){
+//            videoViewManager.update((ArrayList<RCRTCVideoView>) videoViews);
+//        }
+//
+//    }
 
 
     private void audiencesubscribe() {
@@ -443,20 +434,20 @@ public class ChatLiveActivity extends BaseActivity implements View.OnClickListen
 
         }
 
-        @Override
-        public void onLocalAudioEventNotify(RCRTCAudioEventCode event) {
-            super.onLocalAudioEventNotify(event);
-        }
-
-        @Override
-        public void onLocalVideoEventNotify(RCRTCVideoEventCode event) {
-            super.onLocalVideoEventNotify(event);
-        }
-
-        @Override
-        public void onConnectionStateChanged(RCRTCConnectionState state) {
-            super.onConnectionStateChanged(state);
-        }
+//        @Override
+//        public void onLocalAudioEventNotify(RCRTCAudioEventCode event) {
+//            super.onLocalAudioEventNotify(event);
+//        }
+//
+//        @Override
+//        public void onLocalVideoEventNotify(RCRTCVideoEventCode event) {
+//            super.onLocalVideoEventNotify(event);
+//        }
+//
+//        @Override
+//        public void onConnectionStateChanged(RCRTCConnectionState state) {
+//            super.onConnectionStateChanged(state);
+//        }
     };
 
     @Override
@@ -479,6 +470,19 @@ public class ChatLiveActivity extends BaseActivity implements View.OnClickListen
                     mAllMoudle.setVisibility(View.VISIBLE);
                 }
                 break;
+            case R.id.leave_room:
+                RCRTCEngine.getInstance().leaveRoom(new IRCRTCResultCallback() {
+                    @Override
+                    public void onSuccess() {
+                        ToastUtils.showShort("离开房间成功");
+                    }
+
+                    @Override
+                    public void onFailed(RTCErrorCode errorCode) {
+
+                    }
+                });
+                break;
 
 
         }
@@ -496,11 +500,11 @@ public class ChatLiveActivity extends BaseActivity implements View.OnClickListen
         AlertDialog.Builder al = new AlertDialog.Builder(this);
         al.setTitle("请选择音频模式");
         al.setCancelable(true);
-        if (RCRTCEngine.getInstance().getDefaultAudioStream().getAudioScenario() == RCRTCParamsType.AudioScenario.MUSIC_CHATROOM){
-            mode = 0;
-        }else {
-            mode = 1;
-        }
+//        if (RCRTCEngine.getInstance().getDefaultAudioStream().getAudioScenario() == RCRTCParamsType.AudioScenario.MUSIC_CHATROOM){
+//            mode = 0;
+//        }else {
+//            mode = 1;
+//        }
         al.setSingleChoiceItems(new String[]{"音乐模式","开黑模式"}, mode, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -545,14 +549,15 @@ public class ChatLiveActivity extends BaseActivity implements View.OnClickListen
             super.onConnectionStats(statusReport);
         }
 
-        @Override
-        public void reportLiveAudioStates(List<RCRTCLiveAudioState> audioStates) {
-            super.reportLiveAudioStates(audioStates);
-           /// Log.e(TAG,"当前音量为---"+audioStates.get(0).audioLevel);
-        }
+//        @Override
+//        public void reportLiveAudioStates(List<RCRTCLiveAudioState> audioStates) {
+//            super.reportLiveAudioStates(audioStates);
+//           /// Log.e(TAG,"当前音量为---"+audioStates.get(0).audioLevel);
+//        }
     };
 
-    String url = "https://ks3-cn-beijing.ksyuncs.com/cloud-coach/1662703409965上低音号教材1-1-1伴奏.mp3";
+    //String url = "https://ks3-cn-beijing.ksyuncs.com/cloud-coach/1662703409965上低音号教材1-1-1伴奏.mp3";
+    String url = "https://vfine.oss-cn-beijing.aliyuncs.com/songs%2FecQZE0rzJSCDiaNyo2N6ThIrkntAjWANW1buBmnjs3LXxWVPmj.mp3";
 
      //String pathurl  = file1.getAbsolutePath();
 

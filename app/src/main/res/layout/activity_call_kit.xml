@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.CallKitActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="200dp"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/invite_userid"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="请输入要拨打的userid"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/send_invite"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="拨打"
+        android:layout_margin="10dp"
+        />
+
+    <FrameLayout
+        android:id="@+id/video_loca"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

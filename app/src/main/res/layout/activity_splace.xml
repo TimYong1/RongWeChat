@@ -18,9 +18,10 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="60dp"
             android:text="testDemo"
-            android:textColor="@color/white"
+            android:textColor="#0CFFFFFF"
             android:textSize="30dp"
-            android:visibility="gone" />
+            android:visibility="gone"
+             />
 
         <TextView
             android:id="@+id/text_view_test"
@@ -46,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:hint="请输入userid"
                 android:imeOptions="actionNext"
-                android:inputType="number" />
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton

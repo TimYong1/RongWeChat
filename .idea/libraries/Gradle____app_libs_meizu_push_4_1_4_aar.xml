@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: ./app/libs/meizu-push-4.1.4.aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/1568e7c1c74b9a3c6d4b26849c950ebe/transformed/jetified-meizu-push-4.1.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1568e7c1c74b9a3c6d4b26849c950ebe/transformed/jetified-meizu-push-4.1.4/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1568e7c1c74b9a3c6d4b26849c950ebe/transformed/jetified-meizu-push-4.1.4/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

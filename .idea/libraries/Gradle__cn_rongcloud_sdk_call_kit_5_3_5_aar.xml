@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: cn.rongcloud.sdk:call_kit:5.3.5@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/3031b1f1e75276668534a174f2312710/transformed/jetified-call_kit-5.3.5/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3031b1f1e75276668534a174f2312710/transformed/jetified-call_kit-5.3.5/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3031b1f1e75276668534a174f2312710/transformed/jetified-call_kit-5.3.5/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

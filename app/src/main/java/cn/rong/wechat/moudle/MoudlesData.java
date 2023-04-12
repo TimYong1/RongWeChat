@@ -18,7 +18,12 @@ public class MoudlesData{
         moudles.add(new MoudlesDataBean("CDN",3));
         moudles.add(new MoudlesDataBean("播放器",4));
         moudles.add(new MoudlesDataBean("悬浮通知栏",5));
+        test(new Test1());
+        test(new Test());
         return moudles;
 
     }
+
+
+    private void test(InterTest interTest){}
 }

@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: cn.rongcloud.sdk:im_libcore:5.3.5@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/c2a15ea89addabc08cebe1e8dfdb30d2/transformed/jetified-im_libcore-5.3.5/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/c2a15ea89addabc08cebe1e8dfdb30d2/transformed/jetified-im_libcore-5.3.5/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c2a15ea89addabc08cebe1e8dfdb30d2/transformed/jetified-im_libcore-5.3.5/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c2a15ea89addabc08cebe1e8dfdb30d2/transformed/jetified-im_libcore-5.3.5/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

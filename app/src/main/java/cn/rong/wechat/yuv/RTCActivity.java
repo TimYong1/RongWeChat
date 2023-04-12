@@ -19,7 +19,6 @@ import cn.rongcloud.rtc.api.RCRTCEngine;
 import cn.rongcloud.rtc.api.RCRTCRemoteUser;
 import cn.rongcloud.rtc.api.RCRTCRoom;
 import cn.rongcloud.rtc.api.RCRTCRoomConfig;
-import cn.rongcloud.rtc.api.callback.IRCRTCAudioRouteListener;
 import cn.rongcloud.rtc.api.callback.IRCRTCResultCallback;
 import cn.rongcloud.rtc.api.callback.IRCRTCResultDataCallback;
 import cn.rongcloud.rtc.api.callback.IRCRTCRoomEventsListener;
@@ -28,7 +27,6 @@ import cn.rongcloud.rtc.api.stream.RCRTCInputStream;
 import cn.rongcloud.rtc.api.stream.RCRTCOutputStream;
 import cn.rongcloud.rtc.api.stream.RCRTCVideoInputStream;
 import cn.rongcloud.rtc.api.stream.RCRTCVideoView;
-import cn.rongcloud.rtc.audioroute.RCAudioRouteType;
 import cn.rongcloud.rtc.base.RCRTCLiveRole;
 import cn.rongcloud.rtc.base.RCRTCMediaType;
 import cn.rongcloud.rtc.base.RCRTCRemoteVideoFrame;
@@ -39,7 +37,7 @@ import io.rong.imlib.RongIMClient;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RTCActivity extends Base implements IRCRTCAudioRouteListener {
+public class RTCActivity extends Base  {
 
   public static void start(Context context){
       context.startActivity(new Intent(context,RTCActivity.class));
@@ -107,7 +105,7 @@ public class RTCActivity extends Base implements IRCRTCAudioRouteListener {
             @Override
             public void onSuccess(RCRTCRoom data) {
                 showToast("加入房间成功");
-                data.registerRoomListener(roomEventsListener);
+                //data.registerRoomListener(roomEventsListener);
                 data.getLocalUser().publishStreams(defaultAudioStream, new IRCRTCResultCallback() {
                     @Override
                     public void onSuccess() {
@@ -147,57 +145,57 @@ public class RTCActivity extends Base implements IRCRTCAudioRouteListener {
         });
     }
 
-    public IRCRTCRoomEventsListener roomEventsListener = new IRCRTCRoomEventsListener() {
-        @Override
-        public void onRemoteUserPublishResource(RCRTCRemoteUser remoteUser, List<RCRTCInputStream> streams) {
-            sub(streams);
-        }
-
-        @Override
-        public void onRemoteUserMuteAudio(RCRTCRemoteUser remoteUser, RCRTCInputStream stream, boolean mute) {
-
-        }
-
-        @Override
-        public void onRemoteUserMuteVideo(RCRTCRemoteUser remoteUser, RCRTCInputStream stream, boolean mute) {
-        }
-
-        @Override
-        public void onRemoteUserUnpublishResource(RCRTCRemoteUser remoteUser, List<RCRTCInputStream> streams) {
-        }
-
-        @Override
-        public void onUserJoined(RCRTCRemoteUser remoteUser) {
-        }
-
-        @Override
-        public void onUserLeft(RCRTCRemoteUser remoteUser) {
-        }
-
-        @Override
-        public void onUserOffline(RCRTCRemoteUser remoteUser) {
-        }
-
-        @Override
-        public void onPublishLiveStreams(List<RCRTCInputStream> streams) {
-        }
-
-        @Override
-        public void onUnpublishLiveStreams(List<RCRTCInputStream> streams) {
-        }
-
-        @Override
-        public void onFirstRemoteAudioFrame(String userId, String tag) {
-            super.onFirstRemoteAudioFrame(userId, tag);
-            showToast("收到 "+userId +" 音频首帧");
-        }
-
-        @Override
-        public void onFirstRemoteVideoFrame(String userId, String tag, int width, int height) {
-            super.onFirstRemoteVideoFrame(userId, tag, width, height);
-            showToast("收到 "+userId +" 视频首帧");
-        }
-    };
+//    public IRCRTCRoomEventsListener roomEventsListener = new IRCRTCRoomEventsListener() {
+//        @Override
+//        public void onRemoteUserPublishResource(RCRTCRemoteUser remoteUser, List<RCRTCInputStream> streams) {
+//            sub(streams);
+//        }
+//
+//        @Override
+//        public void onRemoteUserMuteAudio(RCRTCRemoteUser remoteUser, RCRTCInputStream stream, boolean mute) {
+//
+//        }
+//
+//        @Override
+//        public void onRemoteUserMuteVideo(RCRTCRemoteUser remoteUser, RCRTCInputStream stream, boolean mute) {
+//        }
+//
+//        @Override
+//        public void onRemoteUserUnpublishResource(RCRTCRemoteUser remoteUser, List<RCRTCInputStream> streams) {
+//        }
+//
+//        @Override
+//        public void onUserJoined(RCRTCRemoteUser remoteUser) {
+//        }
+//
+//        @Override
+//        public void onUserLeft(RCRTCRemoteUser remoteUser) {
+//        }
+//
+//        @Override
+//        public void onUserOffline(RCRTCRemoteUser remoteUser) {
+//        }
+//
+//        @Override
+//        public void onPublishLiveStreams(List<RCRTCInputStream> streams) {
+//        }
+//
+//        @Override
+//        public void onUnpublishLiveStreams(List<RCRTCInputStream> streams) {
+//        }
+//
+//        @Override
+//        public void onFirstRemoteAudioFrame(String userId, String tag) {
+//            super.onFirstRemoteAudioFrame(userId, tag);
+//            showToast("收到 "+userId +" 音频首帧");
+//        }
+//
+//        @Override
+//        public void onFirstRemoteVideoFrame(String userId, String tag, int width, int height) {
+//            super.onFirstRemoteVideoFrame(userId, tag, width, height);
+//            showToast("收到 "+userId +" 视频首帧");
+//        }
+//    };
 
     private void sub(List<RCRTCInputStream> streams) {
         runOnUiThread(new Runnable() {
@@ -211,12 +209,12 @@ public class RTCActivity extends Base implements IRCRTCAudioRouteListener {
                     if (stream.getMediaType() == RCRTCMediaType.VIDEO) {
                         RCRTCVideoInputStream videoInputStream = (RCRTCVideoInputStream) stream;
                         videoInputStream.setVideoView(videoView);
-                        videoInputStream.setVideoFrameListener(new IRCRTCVideoInputFrameListener() {
-                            @Override
-                            public void onFrame(RCRTCRemoteVideoFrame videoFrame) {
-                                setVideoFrame(videoFrame);
-                            }
-                        });
+//                        videoInputStream.setVideoFrameListener(new IRCRTCVideoInputFrameListener() {
+//                            @Override
+//                            public void onFrame(RCRTCRemoteVideoFrame videoFrame) {
+//                                setVideoFrame(videoFrame);
+//                            }
+//                        });
                     }
                     RCRTCEngine.getInstance().getRoom().getLocalUser().subscribeStreams(streamsTmp, new IRCRTCResultCallback() {
                         @Override
@@ -234,21 +232,21 @@ public class RTCActivity extends Base implements IRCRTCAudioRouteListener {
         });
     }
 
-    private void setVideoFrame(RCRTCRemoteVideoFrame videoFrame){
-        RCRTCRemoteVideoFrame.RTCBufferI420 buffer = (RCRTCRemoteVideoFrame.RTCBufferI420) videoFrame.getBuffer();
-     //   LogUtils.e("videoFrame",buffer.getHeight()+"height"+buffer.getWidth()+"widht");
-        GLManager.getInstance().setYuvData(buffer.getDataY(),buffer.getDataU(),buffer.getDataV(),buffer.getWidth(),buffer.getHeight());
-    }
-
-    @Override
-    public void onRouteChanged(RCAudioRouteType type) {
-        showToast("onRouteChanged->type : "+type.name());
-    }
-
-    @Override
-    public void onRouteSwitchFailed(RCAudioRouteType fromType, RCAudioRouteType toType) {
-        showToast("onRouteSwitchFailed->fromType : "+fromType.name() +" ,toType : "+toType.name());
-    }
+//    private void setVideoFrame(RCRTCRemoteVideoFrame videoFrame){
+//        RCRTCRemoteVideoFrame.RTCBufferI420 buffer = (RCRTCRemoteVideoFrame.RTCBufferI420) videoFrame.getBuffer();
+//     //   LogUtils.e("videoFrame",buffer.getHeight()+"height"+buffer.getWidth()+"widht");
+//        GLManager.getInstance().setYuvData(buffer.getDataY(),buffer.getDataU(),buffer.getDataV(),buffer.getWidth(),buffer.getHeight());
+//    }
+//
+//    @Override
+//    public void onRouteChanged(RCAudioRouteType type) {
+//        showToast("onRouteChanged->type : "+type.name());
+//    }
+//
+//    @Override
+//    public void onRouteSwitchFailed(RCAudioRouteType fromType, RCAudioRouteType toType) {
+//        showToast("onRouteSwitchFailed->fromType : "+fromType.name() +" ,toType : "+toType.name());
+//    }
 
 
     private void create() {

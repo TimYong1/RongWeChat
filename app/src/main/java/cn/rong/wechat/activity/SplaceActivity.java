@@ -72,7 +72,7 @@ public class SplaceActivity extends BaseActivity implements View.OnClickListener
                 ToastUtils.showLong("连接成功");
                 MainActivity.start(SplaceActivity.this);
             //    RouteUtils.registerActivity(RouteUtils.RongActivityType.ConversationActivity, ConverstatinActivity.class);
-               // finish();
+                finish();
             }
 
             @Override

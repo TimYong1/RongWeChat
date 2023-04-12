@@ -1,0 +1,61 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        mavenCentral()
+        maven {
+            url 'https://dl.google.com/dl/android/maven2/'
+            name 'Google'
+        }
+        maven { url 'http://developer.huawei.com/repo/' }
+        //UMeng统计
+        maven { url 'https://repo1.maven.org/maven2/' }
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.3.3'
+        // just for GCM.
+        classpath 'com.google.gms:google-services:4.2.0'
+        // 上传Jcenter需要用到的插件
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0'
+        classpath 'com.tencent.bugly:symtabfileuploader:1.3.9'
+        classpath 'com.huawei.agconnect:agcp:1.1.1.300'
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        mavenCentral()
+        maven {
+            url 'https://dl.google.com/dl/android/maven2/'
+            name 'Google'
+        }
+        maven { url 'https://developer.huawei.com/repo/' }
+        maven { url 'https://jitpack.io' }
+//        maven {url 'http://tools.rce.rongcloud.net:9999/nexus/repository/Android-module/'}
+        //UMeng统计
+        maven { url 'https://repo1.maven.org/maven2/' }
+        //融云白板Maven仓库地址
+        maven {url "http://maven.rongcloud.cn/repository/maven-releases/"}
+        //OPPO Push Maven
+        maven {
+            url 'https://maven.columbus.heytapmobi.com/repository/releases/'
+            credentials {
+                username 'nexus'
+                password 'c0b08da17e3ec36c3870fed674a0bcb36abc2e23'
+            }
+        }
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+apply from: './build_seal.gradle'

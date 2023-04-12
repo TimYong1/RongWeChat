@@ -1,10 +1,6 @@
 package cn.rong.wechat;
 
-import static android.media.AudioFormat.ENCODING_PCM_8BIT;
-
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.widget.ViewPager2;
@@ -12,7 +8,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.KeyEvent;
+import android.os.Vibrator;
 import android.view.MenuItem;
 
 import com.blankj.utilcode.util.ToastUtils;
@@ -38,12 +34,14 @@ public class MainActivity extends FragmentActivity {
     private BottomNavigationView bottomNavigationView;
     MainPagerAdapter mainPagerAdapter;
     List<Fragment> fragments = new ArrayList<>();
+    private Vibrator mVibrator;
     private static final String TAG = "MainActivity";
     public static void start(Context context){
         Intent intent = new Intent(context,MainActivity.class);
         context.startActivity(intent);
     //    Listener for handling reselection events on navigation items.
       //  isItemActiveIndicatorEnabled()
+
 
 
     }
@@ -55,6 +53,16 @@ public class MainActivity extends FragmentActivity {
         initView();
         //sendMessage();
     }
+
+//    protected void startVibrator() {
+//        io.rong.imkit.RongContext.getInstance().getSystemService(Context.VIBRATOR_SERVICE);
+//        if (mVibrator == null) {
+//            mVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+//        } else {
+//            mVibrator.cancel();
+//        }
+//        mVibrator.vibrate(new long[] {500, 1000}, 0);
+//    }
 
     /**
      * 默认给9992发条消息，方便测试

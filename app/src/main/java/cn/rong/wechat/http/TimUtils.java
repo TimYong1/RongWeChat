@@ -1,5 +1,7 @@
 package cn.rong.wechat.http;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.text.TextUtils;
@@ -12,6 +14,8 @@ import com.blankj.utilcode.util.ToastUtils;
 
 import java.util.StringTokenizer;
 
+import cn.rong.wechat.R;
+import io.rong.imkit.RongIM;
 import io.rong.imlib.IRongCallback;
 import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.Conversation;
@@ -58,9 +62,18 @@ public class TimUtils {
     }
 
     private void conRongServer(String token) {
+
+//        //要设置channel 的优先级
+//        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+//            NotificationChannel channel = new NotificationChannel(R.drawable.ic_launcher+"","xxx", NotificationManager.IMPORTANCE_HIGH);
+//            channel.enableLights(true);
+//        }
+       //是否在桌面icon右上角展示小红点channel.setLightColor(Color.GREEN); //小红点颜色channel.setShowBadge(true); //是否在久按桌面图标时显示此渠道的通知manager.createNotificationChannel(channel);
+//       builder.setChannelId("001");}
+
       //  String token11 = "0DXyAhAh8COPPjG/mqOaExvBa5RwKCuMzBcGhPWG0Mg=@1rhg.sg.rongnav.com;1rhg.sg.rongcfg.com";
        // String token11 = "0DXyAhAh8COPPjG/mqOaExvBa5RwKCuM98vC95qA+Wg=@1rhg.sg.rongnav.com;1rhg.sg.rongcfg.com";
-            RongIMClient.connect(token, new RongIMClient.ConnectCallback() {
+        RongIM.connect(token, new RongIMClient.ConnectCallback() {
                 @Override
                 public void onSuccess(String s) {
                     isRLogin = true;

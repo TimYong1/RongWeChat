@@ -13,10 +13,11 @@ import com.google.android.material.button.MaterialButton;
 
 import java.util.HashMap;
 
-import io.rong.callkit.RongCallKit;
+import cn.rongcloud.rtc.api.RCRTCEngine;
 import io.rong.calllib.IRongCallListener;
 import io.rong.calllib.RongCallCommon;
 import io.rong.calllib.RongCallSession;
+import io.rong.imlib.RongIMClient;
 
 public class CallProxy implements IRongCallListener {
     private FrameLayout mLocaVideo,mRemoteVideo;
@@ -33,36 +34,38 @@ public class CallProxy implements IRongCallListener {
           this.mAcceptButton = accept;
     }
 
-//    @Override
-//    public void onCallIncoming(RongCallSession callSession, SurfaceView localVideo) {
-//
-//    }
 
 //    @Override
-//    public void onCallIncoming(RongCallSession callSession, SurfaceView localVideo) {
-//
-//    }
-
-    @Override
     public void onCallIncoming(RongCallSession callSession, SurfaceView localVideo) {
+
     }
 
     @Override
     public void onCallOutgoing(RongCallSession callSession, SurfaceView localVideo) {
+      //  RCRTCAudioRouteManager.getInstance().init(mContext);
         addlocaview(localVideo);
-        //callSession.getSessionId();
+
     }
 
     @Override
     public void onCallConnected(RongCallSession callSession, SurfaceView localVideo) {
          addlocaview(localVideo);
+         RCRTCEngine.getInstance().enableSpeaker(true );
+         if (callSession.getInviterUserId().equals(RongIMClient.getInstance().getCurrentUserId())){
+             updataUi("对方已经接听");
+             return;
+         }
+        updataUi("已经接听");
     }
 
     @Override
     public void onCallDisconnected(RongCallSession callSession, RongCallCommon.CallDisconnectedReason reason) {
        removeViews();
-       updataUi();
+       updataUi("接听");
+   //    RCRTCAudioRouteManager.getInstance().unInit();
+        LogUtils.e("连接状态 reason"+ reason.getValue());
       ///  mContext.finish();
+//        RCRTCAudioRouteManager.getInstance().init(mContext);
     }
 
     @Override
@@ -74,6 +77,11 @@ public class CallProxy implements IRongCallListener {
     public void onRemoteUserAccept(String userId, RongCallCommon.CallMediaType mediaType) {
 
     }
+
+//    @Override
+//    public void onRemoteUserAccept(String userId, RongCallCommon.CallMediaType mediaType) {
+//        updataUi("对端已接听");
+//    }
 
     @Override
     public void onRemoteUserJoined(String userId, RongCallCommon.CallMediaType mediaType, int userType, SurfaceView remoteVideo) {
@@ -87,7 +95,7 @@ public class CallProxy implements IRongCallListener {
 
     @Override
     public void onRemoteUserLeft(String userId, RongCallCommon.CallDisconnectedReason reason) {
-        updataUi();
+        updataUi("接听");
 
     }
 
@@ -98,7 +106,7 @@ public class CallProxy implements IRongCallListener {
 
     @Override
     public void onError(RongCallCommon.CallErrorCode errorCode) {
-        updataUi();
+        updataUi("接听");
 
     }
 
@@ -114,11 +122,18 @@ public class CallProxy implements IRongCallListener {
 
     @Override
     public void onNetworkReceiveLost(String userId, int lossRate) {
+        if (lossRate>10){
+            LogUtils.e("onNetwork","onNetworkReceiveLost"+userId,lossRate);
+        }
 
     }
 
     @Override
     public void onNetworkSendLost(int lossRate, int delay) {
+        if (lossRate>10){
+            LogUtils.e("onNetwork","onNetworkSendLost"+delay,lossRate);
+        }
+
 
     }
 
@@ -131,6 +146,16 @@ public class CallProxy implements IRongCallListener {
     public void onFirstRemoteAudioFrame(String userId) {
 
     }
+
+//    @Override
+//    public void onFirstRemoteAudioFrame(String userId) {
+//
+//    }
+
+//    @Override
+//    public void onFirstRemoteAudioFrame(String userId) {
+//
+//    }
 
 //    @Override
 //    public void onFirstRemoteAudioFrame(String userId) {
@@ -206,9 +231,9 @@ public class CallProxy implements IRongCallListener {
     /**
      * 根据不同状态更改UI
      */
-    private void updataUi(){
+    private void updataUi(String str){
         if (mAcceptButton!=null){
-            mAcceptButton.setText("接听");
+            mAcceptButton.setText(str);
         }
     }
 }

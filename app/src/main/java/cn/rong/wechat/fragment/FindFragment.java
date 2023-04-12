@@ -1,5 +1,9 @@
 package cn.rong.wechat.fragment;
 
+import android.annotation.TargetApi;
+import android.os.Build;
+import android.telecom.Call;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,15 +21,16 @@ import java.util.List;
 import java.util.Map;
 
 import cn.rong.wechat.R;
+import cn.rong.wechat.activity.CallKitActivity;
 import cn.rong.wechat.activity.CallLibActivity;
+import cn.rong.wechat.activity.NextActivity;
 import cn.rong.wechat.activity.PreviewLiveActivity;
+import cn.rong.wechat.activity.permission.RongCallPermissionUtil;
 import cn.rong.wechat.adapter.MessageAdapter;
-import cn.rong.wechat.yuv.RTCActivity;
-import io.rong.callkit.RongCallKit;
+import io.rong.calllib.RongCallCommon;
 import io.rong.imlib.IRongCoreCallback;
 import io.rong.imlib.IRongCoreEnum;
 import io.rong.imlib.chatroom.base.RongChatRoomClient;
-import io.rong.imlib.model.ChatRoomMemberAction;
 import io.rong.imlib.model.Conversation;
 import io.rong.imlib.model.Message;
 import io.rong.message.TextMessage;
@@ -33,7 +38,7 @@ import io.rong.message.TextMessage;
 public class FindFragment extends BaseFragment implements View.OnClickListener {
     private TextView name;
     private String nameString;
-    private Button mLiveBtn,test,quite_chatroom,call,chatroomSend;
+    private Button mLiveBtn,test,quite_chatroom,call,chatroomSend,callkit;
     private static final String TAG = "FindFragment";
     private RecyclerView messages_list;
     private MessageAdapter messageAdapter;
@@ -55,6 +60,7 @@ public class FindFragment extends BaseFragment implements View.OnClickListener {
         mLiveBtn = findViewById(R.id.live);
         test = findViewById(R.id.test);
         call = findViewById(R.id.call);
+        callkit = findViewById(R.id.callkit);
         quite_chatroom = findViewById(R.id.quite_chatroom);
         chatroomSend = findViewById(R.id.chat_room_send);
         messages_list = findViewById(R.id.messages_list);
@@ -63,6 +69,7 @@ public class FindFragment extends BaseFragment implements View.OnClickListener {
         test.setOnClickListener(this);
         call.setOnClickListener(this);
         chatroomSend.setOnClickListener(this);
+        callkit.setOnClickListener(this);
         messageAdapter = new MessageAdapter(messages);
         messages_list.setLayoutManager(new LinearLayoutManager(getActivity()));
         messages_list.setAdapter(messageAdapter);
@@ -130,20 +137,27 @@ public class FindFragment extends BaseFragment implements View.OnClickListener {
         }).start();
 
     }
+    static final int REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS = 100;
 
 
     private void startCall(){
-        PermissionUtils.permissionGroup(PermissionConstants.CAMERA,PermissionConstants.MICROPHONE).callback(new PermissionUtils.SimpleCallback() {
-            @Override
-            public void onGranted() {
-                CallLibActivity.start(getActivity());
-            }
 
-            @Override
-            public void onDenied() {
+        if (RongCallPermissionUtil.checkAndRequestPermissionByCallType(getActivity(), RongCallCommon.CallMediaType.VIDEO, REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS)) {
+//            setupIntent();
+            CallLibActivity.start(getActivity());
+        }
 
-            }
-        }).request();
+//        PermissionUtils.permissionGroup(PermissionConstants.CAMERA,PermissionConstants.MICROPHONE).callback(new PermissionUtils.SimpleCallback() {
+//            @Override
+//            public void onGranted() {
+//
+//            }
+//
+//            @Override
+//            public void onDenied() {
+//
+//            }
+//        }).request();
     }
 
 
@@ -188,11 +202,11 @@ public class FindFragment extends BaseFragment implements View.OnClickListener {
     /**
      * 聊天室成员变化监听
      */
-    RongChatRoomClient.ChatRoomMemberActionListener chatRoomMemberActionListener = (chatRoomMemberActions, roomId) -> {
-        for (ChatRoomMemberAction chatRoomMemberAction : chatRoomMemberActions) {
-            LogUtils.e(TAG,"ChatRoomMemberActionListener",chatRoomMemberAction.getUserId()+"加入聊天室"+roomId);
-        }
-    };
+//    RongChatRoomClient.ChatRoomMemberActionListener chatRoomMemberActionListener = (chatRoomMemberActions, roomId) -> {
+//        for (ChatRoomMemberAction chatRoomMemberAction : chatRoomMemberActions) {
+//            LogUtils.e(TAG,"ChatRoomMemberActionListener",chatRoomMemberAction.getUserId()+"加入聊天室"+roomId);
+//        }
+//    };
 
     @Override
     protected void initData() {
@@ -203,7 +217,8 @@ public class FindFragment extends BaseFragment implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.live:
-                PreviewLiveActivity.start(getActivity());
+               // PreviewLiveActivity.start(getActivity());
+                NextActivity.start(getActivity());
                 break;
             case R.id.test:
                 joinChatRoom();
@@ -226,6 +241,11 @@ public class FindFragment extends BaseFragment implements View.OnClickListener {
                 break;
             case R.id.chat_room_send:
                 looperSendMessage();
+                break;
+            case R.id.callkit:
+              //  RCRTCEngine.getInstance().init(getActivity().getApplicationContext(),null);
+                CallKitActivity.start(getActivity());
+              //  CameraMainActivity.start(getActivity());
                 break;
         }
     }
@@ -275,19 +295,19 @@ public class FindFragment extends BaseFragment implements View.OnClickListener {
     }
 
     private void joinChatRoom(){
-        RongChatRoomClient.setChatRoomMemberListener(chatRoomMemberActionListener);
-        RongChatRoomClient.getInstance().addKVStatusListener(kvStatusListener);
-        RongChatRoomClient.setChatRoomAdvancedActionListener(chatRoomAdvancedActionListener);
-        RongChatRoomClient.getInstance().joinChatRoom("999", -1, new IRongCoreCallback.OperationCallback() {
-            @Override
-            public void onSuccess() {
-                ToastUtils.showLong("加入聊天室成功");
-            }
-
-            @Override
-            public void onError(IRongCoreEnum.CoreErrorCode coreErrorCode) {
-                ToastUtils.showLong("加入聊天室失败"+coreErrorCode);
-            }
-        });
+//        RongChatRoomClient.setChatRoomMemberListener(chatRoomMemberActionListener);
+//        RongChatRoomClient.getInstance().addKVStatusListener(kvStatusListener);
+//        RongChatRoomClient.setChatRoomAdvancedActionListener(chatRoomAdvancedActionListener);
+//        RongChatRoomClient.getInstance().joinChatRoom("999", -1, new IRongCoreCallback.OperationCallback() {
+//            @Override
+//            public void onSuccess() {
+//                ToastUtils.showLong("加入聊天室成功");
+//            }
+//
+//            @Override
+//            public void onError(IRongCoreEnum.CoreErrorCode coreErrorCode) {
+//                ToastUtils.showLong("加入聊天室失败"+coreErrorCode);
+//            }
+//        });
     }
 }

@@ -5,6 +5,39 @@
     android:orientation="vertical"
     >
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        >
+
+        <Button
+            android:id="@+id/radio_group1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="铃声"
+            android:layout_margin="10dp"
+            />
+
+        <Button
+            android:id="@+id/radio_group2"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:text="铃声"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/radio_group3"
+            android:layout_weight="1"
+            android:text="铃声"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,7 +56,7 @@
         android:id="@+id/button_start"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="拨打"
+        android:text="视频拨打"
         android:textColor="@color/page_blue"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
@@ -42,6 +75,16 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="挂断"
+        android:textColor="@color/page_blue"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_sperk"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="语音拨打"
         android:textColor="@color/page_blue"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
@@ -74,6 +117,9 @@
             />
 
     </LinearLayout>
+
+
+
 
 
 

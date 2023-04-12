@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "cn.rong.wechat"
-        minSdk 21
+        minSdk 19
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -27,15 +27,25 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    sourceSets {
+        main {
+            // The libs directory contains prebuilt libraries that are used by the
+            // app's library defined in CMakeLists.txt via an IMPORTED target.
+            jniLibs.srcDirs = []
+        }
+    }
+
 }
 
 
 dependencies {
-    def im_version = "5.3.2"
-    def rtc_version = "5.3.2.6"
+    implementation fileTree(includes: ['*.jar', '*.aar'], dir: 'libs')
+    def im_version = "5.3.5"
+    def rtc_version = "5.3.5"
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.9.1'
     debugImplementation 'com.squareup.leakcanary:leakcanary-android-process:2.9.1'
-    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
@@ -43,15 +53,20 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation "cn.rongcloud.sdk:im_lib:${im_version}"
     implementation "cn.rongcloud.sdk:rtc_lib:${rtc_version}" // 音视频通话基础能力库
-    implementation "cn.rongcloud.sdk:player:${rtc_version}" // 相芯美颜扩展库（可选）
+ //   implementation "cn.rongcloud.sdk:player:${rtc_version}" // 相芯美颜扩展库（可选）
     implementation "cn.rongcloud.sdk:call_lib:${rtc_version}"
-    compileOnly "cn.rongcloud.sdk:call_kit:${rtc_version}" // 音视频通话能力 UI 组件
+    implementation "cn.rongcloud.sdk:call_kit:${rtc_version}" // 音视频通话能力 UI 组件
     implementation "cn.rongcloud.sdk:im_kit:${im_version}" // 即时通讯 UI 基础组件
+  //  implementation "cn.rongcloud.sdk:face_beautifier:${rtc_version}" // 美颜扩展库（可选）
 
 
     implementation 'com.android.support:multidex:1.0.3'
     implementation("com.squareup.okhttp3:okhttp:4.9.3")
     implementation("com.squareup.okio:okio:2.10.0")
     implementation 'com.blankj:utilcodex:1.31.0'
+
+//    def room_version = "2.4.0"
+//    implementation "androidx.room:room-runtime:$room_version"
+//    annotationProcessor "androidx.room:room-compiler:$room_version"
 
 }

@@ -342,6 +342,6 @@
     <!--二维码-->
     <dimen name="seal_qrcode_text_14">14sp</dimen>
     <dimen name="seal_main_title_popup_width">160dp</dimen>
-
+    <dimen name="topMargin">0dp</dimen>
 
 </resources>

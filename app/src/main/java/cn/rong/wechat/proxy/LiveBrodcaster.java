@@ -10,9 +10,11 @@ import java.util.List;
 import cn.rongcloud.rtc.api.RCRTCRemoteUser;
 import cn.rongcloud.rtc.api.callback.IRCRTCRoomEventsListener;
 import cn.rongcloud.rtc.api.stream.RCRTCInputStream;
+import cn.rongcloud.rtc.base.RCRTCLiveRole;
 
 public class LiveBrodcaster extends IRCRTCRoomEventsListener {
 
+    private static final String TAG = "LiveBrodcaster";
     public LiveBrodcaster(Handler handler){
 
     }
@@ -20,7 +22,7 @@ public class LiveBrodcaster extends IRCRTCRoomEventsListener {
 
     @Override
     public void onRemoteUserPublishResource(RCRTCRemoteUser remoteUser, List<RCRTCInputStream> streams) {
-
+        LogUtils.e(TAG,remoteUser.getUserId());
     }
 
     @Override
@@ -66,6 +68,11 @@ public class LiveBrodcaster extends IRCRTCRoomEventsListener {
     }
 
     @Override
+    public void onLeaveRoom(int i) {
+
+    }
+
+    @Override
     public void onCancelRequestOtherRoom(String inviterRoomId, String inviterUserId, String extra) {
         super.onCancelRequestOtherRoom(inviterRoomId, inviterUserId, extra);
         LogUtils.e("OtherRoom","onCancelRequestOtherRoom");
@@ -88,4 +95,10 @@ public class LiveBrodcaster extends IRCRTCRoomEventsListener {
         super.onFinishOtherRoom(roomId, userId);
         LogUtils.e("OtherRoom","onFinishOtherRoom");
     }
+
+//    @Override
+//    public void onSwitchRole(String userId, RCRTCLiveRole role) {
+//        super.onSwitchRole(userId, role);
+//        LogUtils.e(TAG,"onSwitchRole"+userId);
+//    }
 }
