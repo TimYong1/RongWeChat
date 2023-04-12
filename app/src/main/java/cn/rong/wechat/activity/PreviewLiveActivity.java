@@ -59,6 +59,7 @@ public class PreviewLiveActivity extends BaseActivity implements View.OnClickLis
         RCRTCEngine.getInstance().getDefaultVideoStream().setVideoView(rcrtcVideoView);
         view_video.addView(rcrtcVideoView);
         LogUtils.e("AAA","create");
+        LogUtils.e("AAA","create");
     }
 
     @Override
